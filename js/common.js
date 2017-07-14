@@ -92,7 +92,7 @@
   }
 
   /**
-   * Mobile burger menu button for toggling sidebar
+   * Mobile burger menu button and gesture for toggling sidebar
    */
 
   function initMobileMenu () {
@@ -107,6 +107,27 @@
     document.body.addEventListener('click', function (e) {
       if (e.target !== menuButton && !sidebar.contains(e.target)) {
         sidebar.classList.remove('open')
+      }
+    })
+
+    // Toggle sidebar on swipe
+    var start = {}, end = {}
+
+    document.body.addEventListener('touchstart', function (e) {
+      start.x = e.changedTouches[0].clientX
+      start.y = e.changedTouches[0].clientY
+    })
+
+    document.body.addEventListener('touchend', function (e) {
+      end.y = e.changedTouches[0].clientY
+      end.x = e.changedTouches[0].clientX
+
+      var xDiff = end.x - start.x
+      var yDiff = end.y - start.y
+
+      if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (xDiff > 0 && start.x <= 80) sidebar.classList.add('open')
+        else sidebar.classList.remove('open')
       }
     })
   }
@@ -231,7 +252,16 @@
 
     function makeLink (h) {
       var link = document.createElement('li')
-      var text = h.textContent.replace(/\(.*\)$/, '')
+      window.arst = h
+      var text = [].slice.call(h.childNodes).map(function (node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          return node.nodeValue
+        } else if (['CODE', 'SPAN'].indexOf(node.tagName) !== -1) {
+          return node.textContent
+        } else {
+          return ''
+        }
+      }).join('').replace(/\(.*\)$/, '')
       link.innerHTML =
         '<a class="section-link" data-scroll href="#' + h.id + '">' +
           htmlEscape(text) +
