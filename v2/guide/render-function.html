@@ -7,6 +7,14 @@
         <meta name="description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+        <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/render-function.html">
+        <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/render-function.html">
+        <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/render-function.html">
+        <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/render-function.html">
+        <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/render-function.html">
+        <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/render-function.html">
+        <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/render-function.html">
+
         <meta property="og:type" content="article">
         <meta property="og:title" content="Render-функции — Vue.js">
         <meta property="og:description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
@@ -734,7 +742,7 @@
 <p>В подобных случаях мы можем пометить компоненты как функциональные (опция <code>functional</code>), что означает отсутствие у них состояния (нет опции <code>data</code>) и экземпляра (нет контекстной переменной <code>this</code>). <strong>Функциональный компонент</strong> выглядит так:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">functional</span>: <span class="literal">true</span>,</div><div class="line">  <span class="comment">// чтобы компенсировать отсутствие экземпляра</span></div><div class="line">  <span class="comment">// мы передаём контекст вторым аргументом</span></div><div class="line">  render: <span class="function"><span class="keyword">function</span> (<span class="params">createElement, context</span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// входные параметры опциональны</span></div><div class="line">  props: &#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <blockquote>
-<p>Примечание: в версиях &lt;=2.3.0 опция <code>props</code> необходима, если вы хотите использовать входные параметры в функциональном компоненте. С версии 2.3.0+ вы можете опустить опцию <code>props</code> и все атрибуты найденные на ноде компонента будут неявно извлечены в качестве входных данных.</p>
+<p>Примечание: в версиях до 2.3.0 опция <code>props</code> необходима, если вы хотите использовать входные параметры в функциональном компоненте. С версии 2.3.0+ вы можете опустить опцию <code>props</code> и все атрибуты найденные на ноде компонента будут неявно извлечены в качестве входных данных.</p>
 </blockquote>
 <p>Всё необходимое компоненту передаётся через <code>context</code> — объект, содержащий следующие поля:</p>
 <ul>

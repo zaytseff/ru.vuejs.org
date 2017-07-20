@@ -7,6 +7,14 @@
         <meta name="description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+        <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/api/index.html">
+        <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/api/index.html">
+        <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/api/index.html">
+        <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/api/index.html">
+        <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/api/index.html">
+        <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/api/index.html">
+        <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/api/index.html">
+
         <meta property="og:type" content="article">
         <meta property="og:title" content="API — Vue.js">
         <meta property="og:description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
@@ -287,14 +295,14 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.config.errorHandler = <span class="function"><span class="keyword">function</span> (<span class="params">err, vm, info</span>) </span>&#123;</div><div class="line">  <span class="comment">// обработка ошибки</span></div><div class="line">  <span class="comment">// `info` это информация Vue-специфичной ошибки, например в каком хуке жизненного цикла</span></div><div class="line">  <span class="comment">// была найдена ошибка. Доступно только в версиях 2.2.0+</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Устанавливает обработчик для ошибок, не пойманных во время рендеринга компонентов и в наблюдателях. Обработчик получит в параметрах ошибку и действующий экземпляр Vue.</p>
 <blockquote>
-<p>В версии 2.2.0, этот хук также отслеживает ошибки в хуках жизненного цикла компонентов. Кроме того, при установленном значении <code>undefined</code> захваченные ошибки будут зарегистрированы с помощью <code>console.error</code> вместо вызова сбоя приложения.</p>
-<p>В версии 2.4.0, этот хук также отслеживает ошибки, возникающие внутри пользовательских обработчиков событий Vue.</p>
+<p>В версии 2.2.0+, этот хук также отслеживает ошибки в хуках жизненного цикла компонентов. Кроме того, при установленном значении <code>undefined</code> захваченные ошибки будут зарегистрированы с помощью <code>console.error</code> вместо вызова сбоя приложения.</p>
+<p>В версии 2.4.0+, этот хук также отслеживает ошибки, возникающие внутри пользовательских обработчиков событий Vue.</p>
 <p>Сервис отслеживания ошибок <a href="https://sentry.io" target="_blank" rel="external">Sentry</a> предлагает <a href="https://sentry.io/for/vue/" target="_blank" rel="external">официальную интеграцию</a> с использованием этого свойства.</p>
 </blockquote>
 </li>
 </ul>
 <h3 id="warnHandler"><a href="#warnHandler" class="headerlink" title="warnHandler"></a>warnHandler</h3><blockquote>
-<p>Добавлено в версии 2.4.0</p>
+<p>Добавлено в версии 2.4.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>Function</code></p>
@@ -328,19 +336,19 @@
 </li>
 </ul>
 <h3 id="performance"><a href="#performance" class="headerlink" title="performance"></a>performance</h3><blockquote>
-<p>Добавлено в версии 2.2.0</p>
+<p>Добавлено в версии 2.2.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>boolean</code></p>
 </li>
-<li><p><strong>По умолчанию:</strong> <code>false</code> (с версии 2.2.3)</p>
+<li><p><strong>По умолчанию:</strong> <code>false</code> (с версии 2.2.3+)</p>
 </li>
 <li><p><strong>Использование:</strong></p>
 <p>Установите в <code>true</code>, чтобы включить отслеживание производительности на этапах инициализации, компиляции, рендера и обновления компонента на графике в инструментах разработчика браузера. Работает только в режиме разработки и в браузерах, которые поддерживают <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark" target="_blank" rel="external">performance.mark</a> API.</p>
 </li>
 </ul>
 <h3 id="productionTip"><a href="#productionTip" class="headerlink" title="productionTip"></a>productionTip</h3><blockquote>
-<p>Добавлено в версии 2.2.0</p>
+<p>Добавлено в версии 2.2.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>boolean</code></p>
@@ -383,7 +391,7 @@
 <p>Выполняет функцию <code>callback</code> при следующем цикле обновления DOM. Вызывайте сразу после изменения данных, чтобы работать с обновлённым DOM.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// изменение данных</span></div><div class="line">vm.msg = <span class="string">'Привет'</span></div><div class="line"><span class="comment">// DOM ещё не обновлён</span></div><div class="line">Vue.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// теперь DOM обновлён</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <blockquote>
-<p>Добавлено в версии 2.1.0: возвращает <code>Promise</code>, если окружение их поддерживает и коллбэк не указан.</p>
+<p>Добавлено в версии 2.1.0+: возвращает <code>Promise</code>, если окружение их поддерживает и коллбэк не указан.</p>
 </blockquote>
 </li>
 <li><p><strong>См. также:</strong> <a href="../guide/reactivity.html#Асинхронная-очередь-обновлений">Асинхронная очередь обновлений</a></p>
@@ -414,14 +422,14 @@
 <li><p><strong>Аргументы:</strong></p>
 <ul>
 <li><code>{Object| Array} target</code></li>
-<li><code>{string | number} key</code></li>
+<li><code>{string | number} key/index</code></li>
 </ul>
+<blockquote>
+<p>Работает с массивами и индексами только в версиях 2.2.0+.</p>
+</blockquote>
 </li>
 <li><p><strong>Использование:</strong></p>
 <p>Удаляет поле. Если объект реактивный, шаблон обновится. Обычно нужен, потому что Vue не может среагировать на неявное удаление полей (но вам редко когда это понадобится).</p>
-<blockquote>
-<p>Также работает с массивами и индексами в версиях 2.2.0+.</p>
-</blockquote>
 <p class="tip">Объект <code>target</code> не может быть экземпляром Vue, или корневым объектом данных экземпляра Vue.</p>
 </li>
 <li><p><strong>См. также:</strong> <a href="../guide/reactivity.html">Подробно о реактивности</a></p>
@@ -666,7 +674,7 @@
 </li>
 </ul>
 <h3 id="renderError"><a href="#renderError" class="headerlink" title="renderError"></a>renderError</h3><blockquote>
-<p>Добавлено в версии 2.2.0</p>
+<p>Добавлено в версии 2.2.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>(createElement: () =&gt; VNode, error: Error) =&gt; VNode</code></p>
@@ -684,7 +692,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Опции-—-хуки-жизненного-цикла"><a href="#Опции-—-хуки-жизненного-цикла" class="headerlink" title="Опции — хуки жизненного цикла"></a>Опции — хуки жизненного цикла</h2><p>Хук (hook — буквально “крючок”), функция, вызывающаяся в определённый момент жизненного цикла сущности, например, непосредственно перед или после создания компонента Vue. Хук позволяет расширить или изменить стандартное поведение на пользовательское.</p>
+<h2 id="Опции-—-хуки-жизненного-цикла"><a href="#Опции-—-хуки-жизненного-цикла" class="headerlink" title="Опции — хуки жизненного цикла"></a>Опции — хуки жизненного цикла</h2><p>Хук (hook — буквально “крючок”) — функция, вызываемая в определённый момент жизненного цикла сущности, например, непосредственно перед или после создания компонента Vue. Хук позволяет расширить или изменить стандартное поведение на пользовательское.</p>
 <p>Контекст <code>this</code> хуков указывает на экземпляр Vue c данными, вычисляемыми свойствами и методами. Это значит, что <strong>вам не следует использовать стрелочные функции для определения хуков жизненного цикла</strong> (напр. <code>created: () =&gt; this.fetchTodos()</code>). Поскольку стрелочные функции связываются с родительским контекстом, <code>this</code> не будет указывать на экземпляр Vue, и <code>this.fetchTodos</code> окажется неопределённым.</p>
 <h3 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h3><ul>
 <li><p><strong>Тип:</strong> <code>Function</code></p>
@@ -864,7 +872,7 @@
 </li>
 </ul>
 <h3 id="provide-inject"><a href="#provide-inject" class="headerlink" title="provide / inject"></a>provide / inject</h3><blockquote>
-<p>Добавлено в версии 2.2.0</p>
+<p>Добавлено в версии 2.2.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong></p>
@@ -888,7 +896,7 @@
 <p>С помощью ES2015 Symbols, функция <code>provide</code> и объект <code>inject</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> s = <span class="built_in">Symbol</span>()</div><div class="line"></div><div class="line"><span class="keyword">const</span> Provider = &#123;</div><div class="line">  provide () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      [s]: <span class="string">'foo'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> Child = &#123;</div><div class="line">  <span class="attr">inject</span>: &#123; s &#125;,</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>Следующие два примера работают только в Vue &gt; 2.2.1. Ниже этой версии, внедрённые значения устанавливаются после инициализации <code>props</code> и <code>data</code>.</p>
+<p>Следующие два примера работают в версии Vue 2.2.1+. Ниже этой версии, внедрённые значения устанавливаются после инициализации <code>props</code> и <code>data</code>.</p>
 </blockquote>
 <p>Использование внедрённого значения, значением по умолчанию для входных данных:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> Child = &#123;</div><div class="line">  <span class="attr">inject</span>: [<span class="string">'foo'</span>],</div><div class="line">  <span class="attr">props</span>: &#123;</div><div class="line">    <span class="attr">bar</span>: &#123;</div><div class="line">      <span class="keyword">default</span> () &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.foo</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -928,7 +936,7 @@
 </li>
 </ul>
 <h3 id="model"><a href="#model" class="headerlink" title="model"></a>model</h3><blockquote>
-<p>Добавлено в версии 2.2.0</p>
+<p>Добавлено в версии 2.2.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>{ prop?: string, event?: string }</code></p>
@@ -944,7 +952,7 @@
 </li>
 </ul>
 <h3 id="inheritAttrs"><a href="#inheritAttrs" class="headerlink" title="inheritAttrs"></a>inheritAttrs</h3><blockquote>
-<p>Добавлено в версии 2.4.0</p>
+<p>Добавлено в версии 2.4.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>boolean</code></p>
@@ -956,7 +964,7 @@
 </li>
 </ul>
 <h3 id="comments"><a href="#comments" class="headerlink" title="comments"></a>comments</h3><blockquote>
-<p>Добавлено в версии 2.4.0</p>
+<p>Добавлено в версии 2.4.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>boolean</code></p>
@@ -977,7 +985,7 @@
 </li>
 </ul>
 <h3 id="vm-props"><a href="#vm-props" class="headerlink" title="vm.$props"></a>vm.$props</h3><blockquote>
-<p>Добавлено в версии 2.2.0</p>
+<p>Добавлено в версии 2.2.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>Object</code></p>
@@ -1052,7 +1060,7 @@
 </li>
 </ul>
 <h3 id="vm-scopedSlots"><a href="#vm-scopedSlots" class="headerlink" title="vm.$scopedSlots"></a>vm.$scopedSlots</h3><blockquote>
-<p>Добавлено в версии 2.1.0</p>
+<p>Добавлено в версии 2.1.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Тип:</strong> <code>{ [name: string]: props =&gt; VNode | Array&lt;VNode&gt; }</code></p>
@@ -1287,7 +1295,7 @@
 <li><p><strong>Использование:</strong></p>
 <p>Выполняет функцию <code>callback</code> при следующем цикле обновления DOM. Вызывайте сразу после изменения данных, чтобы работать с обновлённым DOM. Функция делает то же самое, что и глобальный <code>Vue.nextTick</code>, но кроме того связывает <code>this</code> с текущим экземпляром в коллбэке.</p>
 <blockquote>
-<p>Добавлено в версии 2.1.0: возвращает <code>Promise</code>, если окружение их поддерживает и коллбэк не указан.</p>
+<p>Добавлено в версии 2.1.0+: возвращает <code>Promise</code>, если окружение их поддерживает и коллбэк не указан.</p>
 </blockquote>
 </li>
 <li><p><strong>Пример:</strong></p>
@@ -1373,7 +1381,7 @@
 </li>
 </ul>
 <h3 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a>v-else-if</h3><blockquote>
-<p>Добавлено в версии 2.1.0</p>
+<p>Добавлено в версии 2.1.0+</p>
 </blockquote>
 <ul>
 <li><p><strong>Ожидает:</strong> <code>any</code></p>
@@ -1432,7 +1440,7 @@
 </li>
 <li><p><strong>Использование:</strong></p>
 <p>Прикрепляет к элементу подписчик события. Тип события указывается в параметре. Выражение может быть именем метода, inline-выражением или вовсе отсутствовать, если указан один или несколько модификаторов.</p>
-<p>Начиная с версии <code>2.4.0</code>, <code>v-on</code> также поддерживает привязку к объекту пар событие/обработчик без аргумента. Обратите внимание, что при использовании синтаксиса объекта не поддерживаются никакие модификаторы.</p>
+<p>Начиная с версии 2.4.0+, <code>v-on</code> также поддерживает привязку к объекту пар событие/обработчик без аргумента. Обратите внимание, что при использовании синтаксиса объекта не поддерживаются никакие модификаторы.</p>
 <p>У обычного элемента можно подписаться только <strong>на нативные события DOM</strong>. У элемента компонента можно также подписаться <strong>на пользовательские события</strong>, вызываемые этим дочерним компонентом.</p>
 <p>При работе с нативными событиями DOM, метод получает нативное событие единственным аргументом. В inline-выражениях, можно получить к нему доступ с помощью <code>$event</code>: <code>v-on:click=&quot;handle(&#39;ok&#39;, $event)&quot;</code>.</p>
 </li>
@@ -1684,7 +1692,7 @@
 <p>Оберните динамические компоненты тегом <code>&lt;keep-alive&gt;</code>, чтобы кешировать экземпляры интерактивных компонентов вместо того, чтобы их уничтожать. Так же, как и <code>&lt;transition&gt;</code>, <code>&lt;keep-alive&gt;</code> — абстрактный компонент: при рендеринге он не превращается в элемент DOM, и не показывается в цепочке родителей компонента.</p>
 <p>Когда компонент, расположенный внутри <code>&lt;keep-alive&gt;</code> показывается или скрывается, вызываются его хуки жизненного цикла <code>activated</code> или <code>deactivated</code> соответственно.</p>
 <blockquote>
-<p>В версии 2.2.0 и выше, <code>activated</code> и <code>deactivated</code> будет срабатывать для всех вложенных компонентов внутри <code>&lt;keep-alive&gt;</code> дерева.</p>
+<p>В версии 2.2.0+, <code>activated</code> и <code>deactivated</code> будет срабатывать для всех вложенных компонентов внутри <code>&lt;keep-alive&gt;</code> дерева.</p>
 </blockquote>
 <p>В основном используется для сохранения состояния компонента, чтобы избежать повторного рендеринга.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- базовый вариант --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- несколько потомков --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">comp-a</span> <span class="attr">v-if</span>=<span class="string">"a &gt; 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp-a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">comp-b</span> <span class="attr">v-else</span>&gt;</span><span class="tag">&lt;/<span class="name">comp-b</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- использование вместе с &lt;transition&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">transition</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1692,7 +1700,7 @@
 </li>
 <li><p><strong><code>include</code> и <code>exclude</code></strong></p>
 <blockquote>
-<p>Добавлено в версии 2.1.0</p>
+<p>Добавлено в версии 2.1.0+</p>
 </blockquote>
 <p>Входные параметры <code>include</code> и <code>exclude</code> позволяют организовать условное кеширование компонентов. Оба параметра можно указать в виде строки со списком имён компонентов через запятую, регулярным выражением или массивом:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- строка с именами через запятую --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span> <span class="attr">include</span>=<span class="string">"a,b"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- регулярное выражение (используйте v-bind) --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span> <span class="attr">:include</span>=<span class="string">"/a|b/"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- массив (используйте v-bind) --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span> <span class="attr">:include</span>=<span class="string">"['a', 'b']"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"view"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div></pre></td></tr></table></figure>

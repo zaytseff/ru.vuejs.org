@@ -7,6 +7,14 @@
         <meta name="description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+        <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/typescript.html">
+        <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/typescript.html">
+        <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/typescript.html">
+        <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/typescript.html">
+        <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/typescript.html">
+        <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/typescript.html">
+        <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/typescript.html">
+
         <meta property="og:type" content="article">
         <meta property="og:title" content="Поддержка TypeScript — Vue.js">
         <meta property="og:description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
@@ -624,7 +632,7 @@
     
       <h1>Поддержка TypeScript</h1>
     
-    <h2 id="Важное-изменение-в-2-2-для-пользователей-TS-Webpack-2"><a href="#Важное-изменение-в-2-2-для-пользователей-TS-Webpack-2" class="headerlink" title="Важное изменение в 2.2 для пользователей TS + Webpack 2"></a>Важное изменение в 2.2 для пользователей TS + Webpack 2</h2><p>Во Vue 2.2 мы добавили файлы дистрибутивов в формате ES-модулей, которые используются по умолчанию в Webpack 2. К сожалению, это внесло непреднамеренное критичное изменение потому что с TypeScript + Webpack 2 <code>import Vue = require(&#39;vue&#39;)</code> теперь будет возвращать синтетический объект ES-модуля вместо самого Vue.</p>
+    <h2 id="Важное-изменение-в-2-2-0-для-пользователей-TS-Webpack-2"><a href="#Важное-изменение-в-2-2-0-для-пользователей-TS-Webpack-2" class="headerlink" title="Важное изменение в 2.2.0+ для пользователей TS + Webpack 2"></a>Важное изменение в 2.2.0+ для пользователей TS + Webpack 2</h2><p>Во Vue 2.2.0+ мы добавили файлы дистрибутивов в формате ES-модулей, которые используются по умолчанию в Webpack 2. К сожалению, это внесло непреднамеренное критичное изменение потому что с TypeScript + Webpack 2 <code>import Vue = require(&#39;vue&#39;)</code> теперь будет возвращать синтетический объект ES-модуля вместо самого Vue.</p>
 <p>Мы планируем обновить все официальные декларации для использования ES-стиля в будущем. Пожалуйста изучите <a href="#Рекомендуемая-конфигурация">рекомендуемую конфигурацию</a> ниже для корректной настройки на будущее.</p>
 <h2 id="Официальные-файлы-деклараций-в-NPM-пакетах"><a href="#Официальные-файлы-деклараций-в-NPM-пакетах" class="headerlink" title="Официальные файлы деклараций в NPM-пакетах"></a>Официальные файлы деклараций в NPM-пакетах</h2><p>Статическая типизация может предотвратить много потенциальных ошибок времени выполнения, особенно при разрастании приложений. По этой причине Vue поставляется с <a href="https://github.com/vuejs/vue/tree/dev/types" target="_blank" rel="external">официальными файлами деклараций</a> <a href="https://www.typescriptlang.org/" target="_blank" rel="external">TypeScript</a> причём не только для ядра Vue, но также для <a href="https://github.com/vuejs/vue-router/tree/dev/types" target="_blank" rel="external">Vue Router</a> и <a href="https://github.com/vuejs/vuex/tree/dev/types" target="_blank" rel="external">Vuex</a>.</p>
 <p>Так как всё это уже <a href="https://unpkg.com/vue/types/" target="_blank" rel="external">опубликовано на NPM</a>, то вам даже не понадобится использовать внешние инструменты, такие как <code>Typings</code>, потому что декларации типов автоматически импортируются вместе с Vue.</p>

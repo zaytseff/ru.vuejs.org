@@ -7,6 +7,14 @@
         <meta name="description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+        <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/syntax.html">
+        <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/syntax.html">
+        <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/syntax.html">
+        <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/syntax.html">
+        <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/syntax.html">
+        <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/syntax.html">
+        <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/syntax.html">
+
         <meta property="og:type" content="article">
         <meta property="og:title" content="Синтаксис шаблонов — Vue.js">
         <meta property="og:description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
@@ -661,7 +669,7 @@
 <p>Мы увидим больше примеров применения модификаторов позднее, когда будем более подробно разбирать <code>v-on</code> и <code>v-model</code>.</p>
 <h3 id="Фильтры"><a href="#Фильтры" class="headerlink" title="Фильтры"></a>Фильтры</h3><p>Для распространённых задач форматирования текста во Vue используются фильтры. Они находят своё применение в двух местах: <strong>в mustache-интерполяциях и в выражениях <code>v-bind</code></strong>. Фильтры добавляются в конце выражения JavaScript и отделяются вертикальной чертой:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- mustache --&gt;</span></div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- v-bind --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"rawId | formatId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p class="tip">Во Vue 2.x фильтры могут быть использованы только в mustache-выражениях и (начиная с 2.1.0) в выражениях <code>v-bind</code>, поскольку фильтры в первую очередь предназначены для преобразования текста. Для более сложных преобразований в других директивах лучше использовать <a href="computed.html">вычисляемые свойства</a>.</p>
+<p class="tip">Во Vue 2.x фильтры могут быть использованы только в mustache-выражениях и (начиная с 2.1.0+) в выражениях <code>v-bind</code>, поскольку фильтры в первую очередь предназначены для преобразования текста. Для более сложных преобразований в других директивах лучше использовать <a href="computed.html">вычисляемые свойства</a>.</p>
 
 <p>Функция-фильтр получает первым аргументом вычисленное значение выражения.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  filters: &#123;</div><div class="line">    <span class="attr">capitalize</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">      value = value.toString()</div><div class="line">      <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>

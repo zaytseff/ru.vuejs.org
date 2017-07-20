@@ -7,6 +7,14 @@
         <meta name="description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+        <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/conditional.html">
+        <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/conditional.html">
+        <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/conditional.html">
+        <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/conditional.html">
+        <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/conditional.html">
+        <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/conditional.html">
+        <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/conditional.html">
+
         <meta property="og:type" content="article">
         <meta property="og:title" content="Условный рендеринг — Vue.js">
         <meta property="og:description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
@@ -636,7 +644,7 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></div><div class="line">  Сейчас меня видно</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  А теперь — нет</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Элемент с директивой <code>v-else</code> должен следовать непосредственно за элементом с директивой <code>v-if</code> или <code>v-else-if</code>, иначе он не будет опознан.</p>
 <h3 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a><code>v-else-if</code></h3><blockquote>
-<p>Добавлено в версии 2.1.0</p>
+<p>Добавлено в версии 2.1.0+</p>
 </blockquote>
 <p>Как следует из названия, <code>v-else-if</code> служит в качестве “блока else if” для директивы <code>v-if</code>. Можно объединять эти директивы в длинные цепочки:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"type === 'A'"</span>&gt;</span></div><div class="line">  A</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">"type === 'B'"</span>&gt;</span></div><div class="line">  B</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">"type === 'C'"</span>&gt;</span></div><div class="line">  C</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  Не A/B/C</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>

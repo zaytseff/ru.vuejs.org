@@ -7,6 +7,14 @@
         <meta name="description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+        <link rel="alternate" hreflang="x-default" href="https://vuejs.org/v2/guide/events.html">
+        <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/v2/guide/events.html">
+        <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/v2/guide/events.html">
+        <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/v2/guide/events.html">
+        <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/v2/guide/events.html">
+        <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/v2/guide/events.html">
+        <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/events.html">
+
         <meta property="og:type" content="article">
         <meta property="og:title" content="Обработка событий — Vue.js">
         <meta property="og:description" content="Vue.js — Прогрессивный JavaScript-фреймворк">
@@ -705,7 +713,7 @@ new Vue({
 <p class="tip">Порядок имеет значение при использовании модификаторов, потому что код генерируется в том же порядке. Поэтому использование <code>@click.prevent.self</code> будет предотвращать <strong>все клики</strong>, в то время как <code>@click.self.prevent</code> будет предотвращать клики только на самом элементе.</p>
 
 <blockquote>
-<p>Добавлено в версии 2.1.4</p>
+<p>Добавлено в версии 2.1.4+</p>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- Событие click сработает только 1 раз --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.once</span>=<span class="string">"doThis"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>В отличие от остальных модификаторов, которые поддерживают исключительно нативные DOM-события, модификатор <code>.once</code> можно использовать и в <a href="components.html#Использование-v-on-с-пользовательскими-событиями">пользовательских событиях компонентов</a>. Если вы ещё не читали о компонентах, не беспокойтесь об этом сейчас.</p>
@@ -728,7 +736,7 @@ new Vue({
 <p>Вы можете также <a href="../api/#keyCodes">определить пользовательские псевдонимы клавиш</a> через глобальный объект <code>config.keyCodes</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// включит v-on:keyup.f1</span></div><div class="line">Vue.config.keyCodes.f1 = <span class="number">112</span></div></pre></td></tr></table></figure>
 <h2 id="Модификаторы-клавиш-1"><a href="#Модификаторы-клавиш-1" class="headerlink" title="Модификаторы клавиш"></a>Модификаторы клавиш</h2><blockquote>
-<p>Добавлено в версии 2.1.0</p>
+<p>Добавлено в версии 2.1.0+</p>
 </blockquote>
 <p>Вы можете использовать следующие модификаторы для отслеживания событий мыши или клавиатуры с зажатой клавишей-модификатором:</p>
 <ul>
@@ -745,7 +753,7 @@ new Vue({
 <p class="tip">Обратите внимание, клавиши-модификаторы отличаются от обычных клавиш и при использовании событий <code>keyup</code> они должны быть нажаты, когда событие генерируется. Другими словами, <code>keyup.ctrl</code> сработает только тогда, когда вы отпустите клавишу, удерживая нажатой <code>ctrl</code>. Это не сработает, если вы отпустите только клавишу <code>ctrl</code>.</p>
 
 <h3 id="Модификаторы-клавиш-мыши"><a href="#Модификаторы-клавиш-мыши" class="headerlink" title="Модификаторы клавиш мыши"></a>Модификаторы клавиш мыши</h3><blockquote>
-<p>Добавлено в версии 2.2.0</p>
+<p>Добавлено в версии 2.2.0+</p>
 </blockquote>
 <ul>
 <li><code>.left</code></li>
