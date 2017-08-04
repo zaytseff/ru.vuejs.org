@@ -895,7 +895,7 @@ new Vue({
 <p>это всего лишь синтаксический сахар для:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line">  <span class="attr">v-bind:value</span>=<span class="string">"something"</span></div><div class="line">  <span class="attr">v-on:input</span>=<span class="string">"something = $event.target.value"</span>&gt;</div></pre></td></tr></table></figure>
 <p>При использовании с компонентом, запись упрощается до:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">custom-input</span></span></div><div class="line">  <span class="attr">:value</span>=<span class="string">"something"</span></div><div class="line">  @<span class="attr">input</span>=<span class="string">"something = arguments[0]"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">custom-input</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">custom-input</span></span></div><div class="line">  <span class="attr">:value</span>=<span class="string">"something"</span></div><div class="line">  @<span class="attr">input</span>=<span class="string">"value =&gt; &#123; something = value &#125;"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">custom-input</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Таким образом, чтобы иметь возможность работать с <code>v-model</code>, компонент может (это настраивается в версиях 2.2.0+):</p>
 <ul>
 <li>принимать входной параметр <code>value</code></li>
