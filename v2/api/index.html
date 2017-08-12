@@ -590,10 +590,7 @@
 <li><p><strong>Пример:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;,</div><div class="line">  <span class="attr">computed</span>: &#123;</div><div class="line">    <span class="comment">// если свойство только возвращает данные, достаточно простой функции:</span></div><div class="line">    aDouble: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.a * <span class="number">2</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// свойство и возвращает, и получает данные:</span></div><div class="line">    aPlus: &#123;</div><div class="line">      <span class="attr">get</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.a + <span class="number">1</span></div><div class="line">      &#125;,</div><div class="line">      <span class="attr">set</span>: <span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.a = v - <span class="number">1</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">vm.aPlus   <span class="comment">// -&gt; 2</span></div><div class="line">vm.aPlus = <span class="number">3</span></div><div class="line">vm.a       <span class="comment">// -&gt; 2</span></div><div class="line">vm.aDouble <span class="comment">// -&gt; 4</span></div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>См. также:</strong></p>
-<ul>
-<li><a href="../guide/computed.html">Вычисляемые свойства</a></li>
-</ul>
+<li><p><strong>См. также:</strong> <a href="../guide/computed.html">Вычисляемые свойства</a></p>
 </li>
 </ul>
 <h3 id="methods"><a href="#methods" class="headerlink" title="methods"></a>methods</h3><ul>
@@ -667,10 +664,7 @@
 <p>Если компонент функциональный, вторым параметром передаётся <code>context</code>, дающий доступ к контекстным данным, так как функциональные компоненты не имеют экземпляров.</p>
 <p class="tip">Функция в опции <code>render</code> имеет приоритет над <code>render</code>-функцией, скомпилированной из шаблона определённого в опции <code>template</code>, а также над шаблоном указанным в DOM-элементе, к которому будет выполняться монтирование, через опцию <code>el</code>.</p>
 </li>
-<li><p><strong>См. также:</strong></p>
-<ul>
-<li><a href="../guide/render-function.html">Render-функции</a></li>
-</ul>
+<li><p><strong>См. также:</strong> <a href="../guide/render-function.html">Render-функции</a></p>
 </li>
 </ul>
 <h3 id="renderError"><a href="#renderError" class="headerlink" title="renderError"></a>renderError</h3><blockquote>
@@ -686,10 +680,7 @@
 <li><p><strong>Пример:</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  render (h) &#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'oops'</span>)</div><div class="line">  &#125;,</div><div class="line">  renderError (h, err) &#123;</div><div class="line">    <span class="keyword">return</span> h(<span class="string">'pre'</span>, &#123; <span class="attr">style</span>: &#123; <span class="attr">color</span>: <span class="string">'red'</span> &#125;&#125;, err.stack)</div><div class="line">  &#125;</div><div class="line">&#125;).$mount(<span class="string">'#app'</span>)</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>См. также:</strong></p>
-<ul>
-<li><a href="../guide/render-function.html">Render-функции</a></li>
-</ul>
+<li><p><strong>См. также:</strong> <a href="../guide/render-function.html">Render-функции</a></p>
 </li>
 </ul>
 <h2 id="Опции-—-хуки-жизненного-цикла"><a href="#Опции-—-хуки-жизненного-цикла" class="headerlink" title="Опции — хуки жизненного цикла"></a>Опции — хуки жизненного цикла</h2><p>Хук (hook — буквально “крючок”) — функция, вызываемая в определённый момент жизненного цикла сущности, например, непосредственно перед или после создания компонента Vue. Хук позволяет расширить или изменить стандартное поведение на пользовательское.</p>
@@ -809,10 +800,7 @@
 <li><p><strong>Подробности:</strong></p>
 <p>Хэш директив, доступных экземпляру Vue.</p>
 </li>
-<li><p><strong>См. также:</strong></p>
-<ul>
-<li><a href="../guide/custom-directive.html">Пользовательские директивы</a></li>
-</ul>
+<li><p><strong>См. также:</strong> <a href="../guide/custom-directive.html">Пользовательские директивы</a></p>
 </li>
 </ul>
 <h3 id="filters"><a href="#filters" class="headerlink" title="filters"></a>filters</h3><ul>
@@ -821,10 +809,7 @@
 <li><p><strong>Подробности:</strong></p>
 <p>Хэш фильтров, доступных экземпляру Vue.</p>
 </li>
-<li><p><strong>См. также:</strong></p>
-<ul>
-<li><a href="#Vue-filter"><code>Vue.filter</code></a></li>
-</ul>
+<li><p><strong>См. также:</strong> <a href="#Vue-filter"><code>Vue.filter</code></a></p>
 </li>
 </ul>
 <h3 id="components"><a href="#components" class="headerlink" title="components"></a>components</h3><ul>
@@ -833,10 +818,7 @@
 <li><p><strong>Подробности:</strong></p>
 <p>Хэш компонентов, доступных экземпляру Vue.</p>
 </li>
-<li><p><strong>См. также:</strong></p>
-<ul>
-<li><a href="../guide/components.html">Компоненты</a></li>
-</ul>
+<li><p><strong>См. также:</strong> <a href="../guide/components.html">Компоненты</a></p>
 </li>
 </ul>
 <h2 id="Опции-—-композиция"><a href="#Опции-—-композиция" class="headerlink" title="Опции — композиция"></a>Опции — композиция</h2><h3 id="parent"><a href="#parent" class="headerlink" title="parent"></a>parent</h3><ul>
@@ -1096,7 +1078,7 @@
 <li><p><strong>См. также:</strong></p>
 <ul>
 <li><a href="../guide/components.html#Ссылки-на-компоненты-потомки">Ссылки на компоненты-потомки</a></li>
-<li><a href="#ref">ref</a></li>
+<li><a href="#ref">Специальный атрибут — ref</a></li>
 </ul>
 </li>
 </ul>
@@ -1380,10 +1362,7 @@
 <p>Определяет “блок else” для <code>v-if</code> или цепочки <code>v-if</code>/<code>v-else-if</code>.</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"Math.random() &gt; 0.5"</span>&gt;</span></div><div class="line">  Сейчас меня видно</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></div><div class="line">  А сейчас — нет</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>См. также:</strong></p>
-<ul>
-<li><a href="../guide/conditional.html#v-else">Условный рендеринг — v-else</a></li>
-</ul>
+<li><p><strong>См. также:</strong> <a href="../guide/conditional.html#v-else">Условный рендеринг — v-else</a></p>
 </li>
 </ul>
 <h3 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a>v-else-if</h3><blockquote>
@@ -1556,12 +1535,12 @@
 <li><p><strong>См. также:</strong></p>
 <ul>
 <li><a href="../guide/syntax.html#Текст">Синтаксис шаблонов — интерполяции</a></li>
-<li><a href="../guide/components.html#“Дешёвые”-статические-компоненты-с-использованием-v-once">Компоненты — дешёвые статические компоненты с v-once</a></li>
+<li><a href="../guide/components.html#“Дешёвые”-статические-компоненты-с-использованием-v-once">Компоненты — дешёвые статические компоненты с <code>v-once</code></a></li>
 </ul>
 </li>
 </ul>
 <h2 id="Специальные-атрибуты"><a href="#Специальные-атрибуты" class="headerlink" title="Специальные атрибуты"></a>Специальные атрибуты</h2><h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><ul>
-<li><p><strong>Принимает:</strong> <code>string</code></p>
+<li><p><strong>Принимает:</strong> <code>number | string</code></p>
 <p>Атрибут <code>key</code> помогает алгоритму работы с виртуальным DOM определить, какие ноды соответствует какой строке данных. Если этот атрибут не указан, Vue использует алгоритм, минимизирующий перемещение элементов и старается обновить и повторно использовать как можно больше элементов правильного типа “на местах”. А если ключ указан, Vue изменяет порядок следования элементов, основываясь на изменении порядка ключей. Элементы, соответствующие ключам, которых больше нет, Vue всегда уничтожает.</p>
 <p>Потомки одного и того же общего родителя должны иметь <strong>уникальные ключи</strong>. Повторяющиеся ключи приведут к ошибкам при рендеринге.</p>
 <p>Как правило, используется в связке с <code>v-for</code>:</p>

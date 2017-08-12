@@ -658,7 +658,7 @@ var app = new Vue({
 <p>Вот мы и создали наше первое Vue-приложение! Выглядит похоже на простой рендеринг шаблона, но “под капотом” Vue выполнил немало работы. Данные и DOM теперь <strong>реактивно</strong> связаны. Как это проверить? Просто откройте консоль JavaScript в своём браузере (прямо здесь, на этой странице), и задайте полю <code>app.message</code> другое значение. Вы тут же увидите соответствующее изменение в окне браузера.</p>
 <p>В дополнение к интерполяции текста, мы можем также связывать атрибуты элементов:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app-2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-bind:title</span>=<span class="string">"message"</span>&gt;</span></div><div class="line">    Подержи курсор надо мной пару секунд,</div><div class="line">    чтобы увидеть динамически связанное значение title!</div><div class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> app2 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app-2'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">'Вот когда вы загрузили эту страницу: '</span> + <span class="keyword">new</span> <span class="built_in">Date</span>()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> app2 = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app-2'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">message</span>: <span class="string">'Вот когда вы загрузили эту страницу: '</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleString()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
 <div id="app-2" class="demo">
   <span v-bind:title="message">
@@ -669,7 +669,7 @@ var app = new Vue({
 var app2 = new Vue({
   el: '#app-2',
   data: {
-    message: 'Вот когда вы загрузили эту страницу: ' + new Date()
+    message: 'Вот когда вы загрузили эту страницу: ' + new Date().toLocaleString()
   }
 })
 </script>
