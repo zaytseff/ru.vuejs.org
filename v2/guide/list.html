@@ -862,7 +862,7 @@ new Vue({
 
 <p>Можно также указать второй аргумент для получения ключей:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(value, key) in object"</span>&gt;</span></div><div class="line">  &#123;&#123; key &#125;&#125;: &#123;&#123; value &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>+
+
 <div id="v-for-object-value-key" class="demo">
   <div v-for="(value, key) in object">
     {{ key }}: {{ value }}
@@ -880,7 +880,7 @@ new Vue({
   }
 })
 </script>
-</p>
+
 <p>И третий — для индексов:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(value, key, index) in object"</span>&gt;</span></div><div class="line">  &#123;&#123; index &#125;&#125;. &#123;&#123; key &#125;&#125;: &#123;&#123; value &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 
