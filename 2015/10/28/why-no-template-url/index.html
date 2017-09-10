@@ -142,8 +142,9 @@
             <div id="main" class="fix-sidebar">
                 
                     <div class="sidebar blog">
-    <ul class="main-menu">
-        <li>
+  <div class="sidebar-inner">
+      <ul class="main-menu">
+          <li>
   <form id="search-form">
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
@@ -198,61 +199,62 @@
   <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">Магазин</a>
 </li>
 
-    </ul>
-    <div class="list">
-        <h2>
+      </ul>
+      <div class="list">
+          <h2>
             Недавние посты
-            <a href="/atom.xml" target="_blank" style="vertical-align: middle; margin-left: 5px">
-                <img src="/images/feed.png" style="width:15px;height:15px">
-            </a>
-        </h2>
-        <ul style="padding:0">
-        
-            <li>
-                <a href="/2016/04/27/announcing-2.0/" class="sidebar-link">Announcing Vue.js 2.0</a>
-            </li>
-        
-            <li>
-                <a href="/2016/03/14/march-update/" class="sidebar-link">March 2016 Update</a>
-            </li>
-        
-            <li>
-                <a href="/2016/02/06/common-gotchas/" class="sidebar-link">Common Beginner Gotchas</a>
-            </li>
-        
-            <li>
-                <a href="/2015/12/28/vue-cli/" class="sidebar-link">Announcing vue-cli</a>
-            </li>
-        
-            <li>
-                <a href="/2015/10/28/why-no-template-url/" class="sidebar-link current">Why Vue.js doesn't support templateURL</a>
-            </li>
-        
-            <li>
-                <a href="/2015/10/26/1.0.0-release/" class="sidebar-link">Vue.js 1.0.0 Released</a>
-            </li>
-        
-            <li>
-                <a href="/2015/06/11/012-release/" class="sidebar-link">Vue.js 0.12 released!</a>
-            </li>
-        
-            <li>
-                <a href="/2014/12/08/011-component/" class="sidebar-link">0.11 Component Tips</a>
-            </li>
-        
-            <li>
-                <a href="/2014/11/09/vue-011-release/" class="sidebar-link">Vue.js 0.11 released!</a>
-            </li>
-        
-            <li>
-                <a href="/2014/07/29/vue-next/" class="sidebar-link">Vue.js 0.10.6, and what's next</a>
-            </li>
-        
-        </ul>
-    </div>
+              <a href="/atom.xml" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                  <img src="/images/feed.png" style="width:15px;height:15px">
+              </a>
+          </h2>
+          <ul style="padding:0">
+          
+              <li>
+                  <a href="/2016/04/27/announcing-2.0/" class="sidebar-link">Announcing Vue.js 2.0</a>
+              </li>
+          
+              <li>
+                  <a href="/2016/03/14/march-update/" class="sidebar-link">March 2016 Update</a>
+              </li>
+          
+              <li>
+                  <a href="/2016/02/06/common-gotchas/" class="sidebar-link">Common Beginner Gotchas</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/12/28/vue-cli/" class="sidebar-link">Announcing vue-cli</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/10/28/why-no-template-url/" class="sidebar-link current">Why Vue.js doesn't support templateURL</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/10/26/1.0.0-release/" class="sidebar-link">Vue.js 1.0.0 Released</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/06/11/012-release/" class="sidebar-link">Vue.js 0.12 released!</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/12/08/011-component/" class="sidebar-link">0.11 Component Tips</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/11/09/vue-011-release/" class="sidebar-link">Vue.js 0.11 released!</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/07/29/vue-next/" class="sidebar-link">Vue.js 0.10.6, and what's next</a>
+              </li>
+          
+          </ul>
+      </div>
+  </div>
 </div>
 <div class="content with-sidebar blog post">
-    <div id="ad">
+  <div id="ad">
   <script>
     (function () {
       var s = document.createElement('script')
@@ -264,9 +266,9 @@
   </script>
 </div>
 
-    <h1>Why Vue.js doesn't support templateURL</h1>
-    <h4>Oct 28, 2015</h4>
-    <p>A very common question from new Vue users, especially those who used Angular before, is “can I have <code>templateURL</code>?”. I have answered this so many times and I figure it’s better to write something about it.</p>
+  <h1>Why Vue.js doesn't support templateURL</h1>
+  <h4>Oct 28, 2015</h4>
+  <p>A very common question from new Vue users, especially those who used Angular before, is “can I have <code>templateURL</code>?”. I have answered this so many times and I figure it’s better to write something about it.</p>
 <a id="more"></a>
 <p>In Angular, <code>templateURL</code> or <code>ng-include</code> allows the user to dynamically load a remote template file at runtime. This seems pretty convenient as a built-in feature, but let’s rethink what problem it solves.</p>
 <p>First, it allows us to write our template in a separate HTML file. This gives us proper syntax highlighting in editors, which is probably why many prefer to do so. But is splitting your JavaScript code and the template really the best way? For a Vue.js component, its template and its JavaScript is tightly coupled by nature - it’s in fact much simpler if things are just in the same file. The context switching of jumping back and forth between two files actually makes the development experience much worse. Conceptually, components are the basic building block of a Vue.js app, not templates. Every Vue.js template is coupled to an accompanying JavaScript context - there’s no point in splitting them further apart.</p>

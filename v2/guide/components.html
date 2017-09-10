@@ -921,6 +921,12 @@ new Vue({
 })
 </script>
 
+<p>Если вы хотите передать все свойства объекта в качестве параметров, вы можете использовать <code>v-bind</code> без аргументов (<code>v-bind</code> вместо <code>v-bind:prop-name</code>). К примеру для объекта <code>todo</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">todo: &#123;</div><div class="line">  <span class="attr">text</span>: <span class="string">'Learn Vue'</span>,</div><div class="line">  <span class="attr">isComplete</span>: <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Запись:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">todo-item</span> <span class="attr">v-bind</span>=<span class="string">"todo"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Будет эквивалентна:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">todo-item</span></span></div><div class="line">  <span class="attr">v-bind:text</span>=<span class="string">"todo.text"</span></div><div class="line">  <span class="attr">v-bind:is-complete</span>=<span class="string">"todo.isComplete"</span></div><div class="line">&gt;<span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="Различие-между-литералами-и-динамическими-параметрами"><a href="#Различие-между-литералами-и-динамическими-параметрами" class="headerlink" title="Различие между литералами и динамическими параметрами"></a>Различие между литералами и динамическими параметрами</h3><p>Часто встречается ошибка, когда число передаётся компоненту напрямую в виде константы:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- при такой записи в компонент будет передана строка "1" --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">comp</span> <span class="attr">some-prop</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Так как в качестве параметра передан литерал, компонент получит не число, а строку <code>&quot;1&quot;</code>. Для передачи числа нужно использовать директиву <code>v-bind</code>, поскольку её значение вычисляется как выражение JavaScript:</p>
@@ -1042,7 +1048,7 @@ new Vue({
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"something"</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>это всего лишь синтаксический сахар для:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span></span></div><div class="line">  <span class="attr">v-bind:value</span>=<span class="string">"something"</span></div><div class="line">  <span class="attr">v-on:input</span>=<span class="string">"something = $event.target.value"</span>&gt;</div></pre></td></tr></table></figure>
-<p>При использовании с компонентом, запись упрощается до:</p>
+<p>При использовании с компонентом вместо этого упрощается:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">custom-input</span></span></div><div class="line">  <span class="attr">:value</span>=<span class="string">"something"</span></div><div class="line">  @<span class="attr">input</span>=<span class="string">"value =&gt; &#123; something = value &#125;"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">custom-input</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Таким образом, чтобы иметь возможность работать с <code>v-model</code>, компонент может (это настраивается в версиях 2.2.0+):</p>
 <ul>

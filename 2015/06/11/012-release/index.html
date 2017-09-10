@@ -142,8 +142,9 @@
             <div id="main" class="fix-sidebar">
                 
                     <div class="sidebar blog">
-    <ul class="main-menu">
-        <li>
+  <div class="sidebar-inner">
+      <ul class="main-menu">
+          <li>
   <form id="search-form">
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
@@ -198,61 +199,62 @@
   <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">Магазин</a>
 </li>
 
-    </ul>
-    <div class="list">
-        <h2>
+      </ul>
+      <div class="list">
+          <h2>
             Недавние посты
-            <a href="/atom.xml" target="_blank" style="vertical-align: middle; margin-left: 5px">
-                <img src="/images/feed.png" style="width:15px;height:15px">
-            </a>
-        </h2>
-        <ul style="padding:0">
-        
-            <li>
-                <a href="/2016/04/27/announcing-2.0/" class="sidebar-link">Announcing Vue.js 2.0</a>
-            </li>
-        
-            <li>
-                <a href="/2016/03/14/march-update/" class="sidebar-link">March 2016 Update</a>
-            </li>
-        
-            <li>
-                <a href="/2016/02/06/common-gotchas/" class="sidebar-link">Common Beginner Gotchas</a>
-            </li>
-        
-            <li>
-                <a href="/2015/12/28/vue-cli/" class="sidebar-link">Announcing vue-cli</a>
-            </li>
-        
-            <li>
-                <a href="/2015/10/28/why-no-template-url/" class="sidebar-link">Why Vue.js doesn't support templateURL</a>
-            </li>
-        
-            <li>
-                <a href="/2015/10/26/1.0.0-release/" class="sidebar-link">Vue.js 1.0.0 Released</a>
-            </li>
-        
-            <li>
-                <a href="/2015/06/11/012-release/" class="sidebar-link current">Vue.js 0.12 released!</a>
-            </li>
-        
-            <li>
-                <a href="/2014/12/08/011-component/" class="sidebar-link">0.11 Component Tips</a>
-            </li>
-        
-            <li>
-                <a href="/2014/11/09/vue-011-release/" class="sidebar-link">Vue.js 0.11 released!</a>
-            </li>
-        
-            <li>
-                <a href="/2014/07/29/vue-next/" class="sidebar-link">Vue.js 0.10.6, and what's next</a>
-            </li>
-        
-        </ul>
-    </div>
+              <a href="/atom.xml" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                  <img src="/images/feed.png" style="width:15px;height:15px">
+              </a>
+          </h2>
+          <ul style="padding:0">
+          
+              <li>
+                  <a href="/2016/04/27/announcing-2.0/" class="sidebar-link">Announcing Vue.js 2.0</a>
+              </li>
+          
+              <li>
+                  <a href="/2016/03/14/march-update/" class="sidebar-link">March 2016 Update</a>
+              </li>
+          
+              <li>
+                  <a href="/2016/02/06/common-gotchas/" class="sidebar-link">Common Beginner Gotchas</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/12/28/vue-cli/" class="sidebar-link">Announcing vue-cli</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/10/28/why-no-template-url/" class="sidebar-link">Why Vue.js doesn't support templateURL</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/10/26/1.0.0-release/" class="sidebar-link">Vue.js 1.0.0 Released</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/06/11/012-release/" class="sidebar-link current">Vue.js 0.12 released!</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/12/08/011-component/" class="sidebar-link">0.11 Component Tips</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/11/09/vue-011-release/" class="sidebar-link">Vue.js 0.11 released!</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/07/29/vue-next/" class="sidebar-link">Vue.js 0.10.6, and what's next</a>
+              </li>
+          
+          </ul>
+      </div>
+  </div>
 </div>
 <div class="content with-sidebar blog post">
-    <div id="ad">
+  <div id="ad">
   <script>
     (function () {
       var s = document.createElement('script')
@@ -264,9 +266,9 @@
   </script>
 </div>
 
-    <h1>Vue.js 0.12 released!</h1>
-    <h4>Jun 11, 2015</h4>
-    <p>I’m really excited to announce that <a href="https://github.com/yyx990803/vue/releases/tag/0.12.0" target="_blank" rel="external">Vue.js 0.12: Dragon Ball</a> is finally here! Thanks to everyone who tried out the beta/rc versions and provided feedback / bug reports along the way.</p>
+  <h1>Vue.js 0.12 released!</h1>
+  <h4>Jun 11, 2015</h4>
+  <p>I’m really excited to announce that <a href="https://github.com/yyx990803/vue/releases/tag/0.12.0" target="_blank" rel="external">Vue.js 0.12: Dragon Ball</a> is finally here! Thanks to everyone who tried out the beta/rc versions and provided feedback / bug reports along the way.</p>
 <p>There’s a lot to cover in this release, and we will talk about a few highlights below. However, it is still recommended to carefully go through the <a href="https://github.com/yyx990803/vue/releases/tag/0.12.0" target="_blank" rel="external">Full Release Note</a> and updated docs if you are upgrading from 0.11. You can report bugs on GitHub, send questions to <a href="https://github.com/vuejs/Discussion/issues" target="_blank" rel="external">vuejs/Discussion</a>, or join us in the <a href="https://gitter.im/yyx990803/vue" target="_blank" rel="external">Gitter chat channel</a>.</p>
 <a id="more"></a>
 <h3 id="More-Consistent-Component-Syntax"><a href="#More-Consistent-Component-Syntax" class="headerlink" title="More Consistent Component Syntax"></a>More Consistent Component Syntax</h3><p>Previously in 0.11 you have two ways to use a Vue.js component: using the <code>v-component</code> directive, or using custom elements. There are also two ways to pass data down to child components: using the <code>v-with</code> directive, or using the <code>paramAttributes</code> option. Although both custom elements and param attributes get compiled down to directives eventually, it is confusing and redundant to have two sets of syntax for the same functionality.</p>

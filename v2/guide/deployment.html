@@ -800,9 +800,9 @@
 <h2 id="Извлечение-CSS-из-компонентов"><a href="#Извлечение-CSS-из-компонентов" class="headerlink" title="Извлечение CSS из компонентов"></a>Извлечение CSS из компонентов</h2><p>При использовании однофайловых компонентов, CSS из компонента будет динамически добавлен как тег <code>&lt;style&gt;</code> через JavaScript. Это немного увеличивает затраты времени выполнения, поэтому при использовании рендеринга на стороне сервера может привести к “мельканию неоформленного содержимого” (англ. flash of unstyled content — FOUC). Извлечение CSS из всех компонентов в один файл позволит избежать этой проблемы, а также добиться лучших результатов в минификации и кешировании CSS.</p>
 <p>Обратитесь к документации соответствующих инструментов для сборки, чтобы узнать как это реализовать:</p>
 <ul>
-<li><a href="http://vue-loader.vuejs.org/en/configurations/extract-css.html" target="_blank" rel="external">Webpack + vue-loader</a> (в <code>vue-cli</code> с шаблоном webpack это уже настроено)</li>
+<li><a href="https://vue-loader.vuejs.org/ru/configurations/extract-css.html" target="_blank" rel="external">Webpack + vue-loader</a> (в <code>vue-cli</code> с шаблоном webpack это уже настроено)</li>
 <li><a href="https://github.com/vuejs/vueify#css-extraction" target="_blank" rel="external">Browserify + vueify</a></li>
-<li><a href="https://github.com/znck/rollup-plugin-vue#options" target="_blank" rel="external">Rollup + rollup-plugin-vue</a></li>
+<li><a href="https://vuejs.github.io/rollup-plugin-vue/#/en/2.3/?id=custom-handler" target="_blank" rel="external">Rollup + rollup-plugin-vue</a></li>
 </ul>
 <h2 id="Отслеживание-ошибок-времени-выполнения"><a href="#Отслеживание-ошибок-времени-выполнения" class="headerlink" title="Отслеживание ошибок времени выполнения"></a>Отслеживание ошибок времени выполнения</h2><p>Если при рендеринге компонента произойдёт ошибка, она будет передана в глобальную функцию <code>Vue.config.errorHandler</code>, если таковая была указана. Использование этого хука в связке с сервисом отслеживания ошибок, например с <a href="https://sentry.io" target="_blank" rel="external">Sentry</a>, может быть неплохой идеей — тем более, что <a href="https://sentry.io/for/vue/" target="_blank" rel="external">интеграция с Vue официально поддерживается</a>.</p>
 

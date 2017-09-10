@@ -142,8 +142,9 @@
             <div id="main" class="fix-sidebar">
                 
                     <div class="sidebar blog">
-    <ul class="main-menu">
-        <li>
+  <div class="sidebar-inner">
+      <ul class="main-menu">
+          <li>
   <form id="search-form">
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
@@ -198,61 +199,62 @@
   <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">Магазин</a>
 </li>
 
-    </ul>
-    <div class="list">
-        <h2>
+      </ul>
+      <div class="list">
+          <h2>
             Недавние посты
-            <a href="/atom.xml" target="_blank" style="vertical-align: middle; margin-left: 5px">
-                <img src="/images/feed.png" style="width:15px;height:15px">
-            </a>
-        </h2>
-        <ul style="padding:0">
-        
-            <li>
-                <a href="/2016/04/27/announcing-2.0/" class="sidebar-link">Announcing Vue.js 2.0</a>
-            </li>
-        
-            <li>
-                <a href="/2016/03/14/march-update/" class="sidebar-link">March 2016 Update</a>
-            </li>
-        
-            <li>
-                <a href="/2016/02/06/common-gotchas/" class="sidebar-link">Common Beginner Gotchas</a>
-            </li>
-        
-            <li>
-                <a href="/2015/12/28/vue-cli/" class="sidebar-link">Announcing vue-cli</a>
-            </li>
-        
-            <li>
-                <a href="/2015/10/28/why-no-template-url/" class="sidebar-link">Why Vue.js doesn't support templateURL</a>
-            </li>
-        
-            <li>
-                <a href="/2015/10/26/1.0.0-release/" class="sidebar-link">Vue.js 1.0.0 Released</a>
-            </li>
-        
-            <li>
-                <a href="/2015/06/11/012-release/" class="sidebar-link">Vue.js 0.12 released!</a>
-            </li>
-        
-            <li>
-                <a href="/2014/12/08/011-component/" class="sidebar-link current">0.11 Component Tips</a>
-            </li>
-        
-            <li>
-                <a href="/2014/11/09/vue-011-release/" class="sidebar-link">Vue.js 0.11 released!</a>
-            </li>
-        
-            <li>
-                <a href="/2014/07/29/vue-next/" class="sidebar-link">Vue.js 0.10.6, and what's next</a>
-            </li>
-        
-        </ul>
-    </div>
+              <a href="/atom.xml" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                  <img src="/images/feed.png" style="width:15px;height:15px">
+              </a>
+          </h2>
+          <ul style="padding:0">
+          
+              <li>
+                  <a href="/2016/04/27/announcing-2.0/" class="sidebar-link">Announcing Vue.js 2.0</a>
+              </li>
+          
+              <li>
+                  <a href="/2016/03/14/march-update/" class="sidebar-link">March 2016 Update</a>
+              </li>
+          
+              <li>
+                  <a href="/2016/02/06/common-gotchas/" class="sidebar-link">Common Beginner Gotchas</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/12/28/vue-cli/" class="sidebar-link">Announcing vue-cli</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/10/28/why-no-template-url/" class="sidebar-link">Why Vue.js doesn't support templateURL</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/10/26/1.0.0-release/" class="sidebar-link">Vue.js 1.0.0 Released</a>
+              </li>
+          
+              <li>
+                  <a href="/2015/06/11/012-release/" class="sidebar-link">Vue.js 0.12 released!</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/12/08/011-component/" class="sidebar-link current">0.11 Component Tips</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/11/09/vue-011-release/" class="sidebar-link">Vue.js 0.11 released!</a>
+              </li>
+          
+              <li>
+                  <a href="/2014/07/29/vue-next/" class="sidebar-link">Vue.js 0.10.6, and what's next</a>
+              </li>
+          
+          </ul>
+      </div>
+  </div>
 </div>
 <div class="content with-sidebar blog post">
-    <div id="ad">
+  <div id="ad">
   <script>
     (function () {
       var s = document.createElement('script')
@@ -264,9 +266,9 @@
   </script>
 </div>
 
-    <h1>0.11 Component Tips</h1>
-    <h4>Dec 8, 2014</h4>
-    <p class="tip">Note: this post contains information for the outdated 0.11 version. Please refer to the <a href="https://github.com/yyx990803/vue/releases" target="_blank" rel="external">0.12 release notes</a> for the changes in the API.</p>
+  <h1>0.11 Component Tips</h1>
+  <h4>Dec 8, 2014</h4>
+  <p class="tip">Note: this post contains information for the outdated 0.11 version. Please refer to the <a href="https://github.com/yyx990803/vue/releases" target="_blank" rel="external">0.12 release notes</a> for the changes in the API.</p>
 
 <p>The release of 0.11 introduced <a href="https://github.com/yyx990803/vue/blob/master/changes.md" target="_blank" rel="external">many changes</a>, but the most important one is how the new component scope works. Previously in 0.10.x, components have inherited scope by default. That means in a child component template you can reference parent scope properties. This often leads to tightly-coupled components, where a child component assumes knowledge of what properties are present in the parent scope. It is also possible to accidentally refer to a parent scope property in a child component.</p>
 <a id="more"></a>
