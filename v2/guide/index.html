@@ -107,6 +107,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Списки ресурсов</h4></li>
     <li><ul>
@@ -172,6 +173,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Списки ресурсов</h4></li>
     <li><ul>
@@ -944,7 +946,7 @@ var app7 = new Vue({
 <p>Конечно же, этот пример слегка надуман, но посмотрите сами — нам удалось разделить наше приложение на два меньших объекта, и дочерний оказался в разумной мере отвязан от родительского с помощью интерфейса входных параметров. Теперь мы можем и далее улучшать наш компонент <code>&lt;todo-item&gt;</code>, усложняя шаблон и логику, но не влияя на родительское приложение.</p>
 <p>В крупных приложениях разделение на компоненты становится обязательным условием для сохранения управляемости процесса разработки. Разговор о компонентах ещё далеко не закончен и будет продолжен <a href="components.html">далее в этом руководстве</a>, но уже сейчас можно взглянуть на (вымышленный) пример того, как мог бы выглядеть шаблон приложения, использующего компоненты:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">app-nav</span>&gt;</span><span class="tag">&lt;/<span class="name">app-nav</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">app-view</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">app-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="name">app-sidebar</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">app-content</span>&gt;</span><span class="tag">&lt;/<span class="name">app-content</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">app-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="Отношение-к-пользовательским-элементам-Web-Components"><a href="#Отношение-к-пользовательским-элементам-Web-Components" class="headerlink" title="Отношение к пользовательским элементам Web Components"></a>Отношение к пользовательским элементам Web Components</h3><p>Вы могли заметить, что компоненты Vue довольно похожи на <strong>пользовательские элементы</strong>, являющиеся частью <a href="http://www.w3.org/wiki/WebComponents/" target="_blank" rel="external">спецификации W3C Web Components</a>. Дело в том, что синтаксис компонентов Vue и правда намеренно следует этой спецификации. В частности, компоненты Vue реализуют <a href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md" target="_blank" rel="external">API слотов</a> и специальный атрибут <code>is</code>. Вместе с тем, есть и несколько ключевых различий:</p>
+<h3 id="Отношение-к-пользовательским-элементам-Web-Components"><a href="#Отношение-к-пользовательским-элементам-Web-Components" class="headerlink" title="Отношение к пользовательским элементам Web Components"></a>Отношение к пользовательским элементам Web Components</h3><p>Вы могли заметить, что компоненты Vue довольно похожи на <strong>пользовательские элементы</strong>, являющиеся частью <a href="https://www.w3.org/wiki/WebComponents/" target="_blank" rel="external">спецификации W3C Web Components</a>. Дело в том, что синтаксис компонентов Vue и правда намеренно следует этой спецификации. В частности, компоненты Vue реализуют <a href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md" target="_blank" rel="external">API слотов</a> и специальный атрибут <code>is</code>. Вместе с тем, есть и несколько ключевых различий:</p>
 <ol>
 <li><p>Спецификация Web Components всё ещё находится в статусе черновика и не реализована ни в одном из браузеров. Компоненты Vue, напротив, не требуют никаких полифиллов и устойчиво работают во всех поддерживаемых браузерах (IE9 и выше). При необходимости компоненты Vue могут быть обёрнуты в нативные пользовательские элементы.</p>
 </li>
@@ -964,6 +966,20 @@ var app7 = new Vue({
       </div>
     
     <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
       Обнаружили ошибку или хотите добавить что-то своё в документацию?
       <a href="https://github.com/translation-gang/ru.vuejs.org/blob/master/src/v2/guide/index.md" target="_blank">
         Отредактируйте эту страницу на Github!

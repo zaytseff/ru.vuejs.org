@@ -107,6 +107,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Списки ресурсов</h4></li>
     <li><ul>
@@ -172,6 +173,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Списки ресурсов</h4></li>
     <li><ul>
@@ -972,6 +974,8 @@ new Vue({
 <p>Причина, по которой <code>item</code> не передаётся в компонент автоматически, в том, что это сделало бы компонент жёстко связанным с логикой работы <code>v-for</code>. А если источник данных указывается явно, компонент можно будет использовать и в других ситуациях.</p>
 <p>Ниже приведён полный пример простого списка todo:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"todo-list-example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span></span></div><div class="line">    <span class="attr">v-model</span>=<span class="string">"newTodoText"</span></div><div class="line">    <span class="attr">v-on:keyup.enter</span>=<span class="string">"addNewTodo"</span></div><div class="line">    <span class="attr">placeholder</span>=<span class="string">"Добавить todo"</span></div><div class="line">  &gt;</div><div class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span></span></div><div class="line">      <span class="attr">is</span>=<span class="string">"todo-item"</span></div><div class="line">      <span class="attr">v-for</span>=<span class="string">"(todo, index) in todos"</span></div><div class="line">      <span class="attr">v-bind:key</span>=<span class="string">"todo.id"</span></div><div class="line">      <span class="attr">v-bind:title</span>=<span class="string">"todo.title"</span></div><div class="line">      <span class="attr">v-on:remove</span>=<span class="string">"todos.splice(index, 1)"</span></div><div class="line">    &gt;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p class="tip">Обратите внимание на атрибут <code>is=&quot;todo-item&quot;</code>. Это необходимо в DOM-шаблонах, потому что только элементы <code>&lt;li&gt;</code> разрешены внутри <code>&lt;ul&gt;</code>. Результат будет таким же, как использование <code>&lt;todo-item&gt;</code>, но позволяет обойти ошибки парсинга браузером. Чтобы узнать больше, изучите <a href="components.html#Особенности-парсинга-DOM-шаблона">особенности парсинга DOM-шаблона</a>.</p>
+
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'todo-item'</span>, &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'\</span></div><div class="line">    &lt;li&gt;\</div><div class="line">      &#123;&#123; title &#125;&#125;\</div><div class="line">      &lt;button v-on:click="$emit(\'remove\')"&gt;X&lt;/button&gt;\</div><div class="line">    &lt;/li&gt;\</div><div class="line">  ',</div><div class="line">  <span class="attr">props</span>: [<span class="string">'title'</span>]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#todo-list-example'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">newTodoText</span>: <span class="string">''</span>,</div><div class="line">    <span class="attr">todos</span>: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">id</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">title</span>: <span class="string">'Вымыть посуду'</span></div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">id</span>: <span class="number">2</span>,</div><div class="line">        <span class="attr">title</span>: <span class="string">'Вынести мусор'</span></div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">id</span>: <span class="number">3</span>,</div><div class="line">        <span class="attr">title</span>: <span class="string">'Подстричь газон'</span></div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">nextTodoId</span>: <span class="number">4</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">addNewTodo</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.todos.push(&#123;</div><div class="line">        <span class="attr">id</span>: <span class="keyword">this</span>.nextTodoId++,</div><div class="line">        <span class="attr">title</span>: <span class="keyword">this</span>.newTodoText</div><div class="line">      &#125;)</div><div class="line">      <span class="keyword">this</span>.newTodoText = <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 
 <div id="todo-list-example" class="demo">
@@ -1034,6 +1038,20 @@ new Vue({
       </div>
     
     <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
       Обнаружили ошибку или хотите добавить что-то своё в документацию?
       <a href="https://github.com/translation-gang/ru.vuejs.org/blob/master/src/v2/guide/list.md" target="_blank">
         Отредактируйте эту страницу на Github!

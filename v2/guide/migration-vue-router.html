@@ -107,6 +107,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Списки ресурсов</h4></li>
     <li><ul>
@@ -172,6 +173,7 @@
     <li><ul>
       <li><a href="https://router.vuejs.org/" class="nav-link" target="_blank">Vue Router</a></li>
       <li><a href="https://vuex.vuejs.org/" class="nav-link" target="_blank">Vuex</a></li>
+      <li><a href="https://ssr.vuejs.org/" class="nav-link" target="_blank">Vue Server Renderer</a></li>
     </ul></li>
     <li><h4>Списки ресурсов</h4></li>
     <li><ul>
@@ -781,7 +783,7 @@
       <h1>Миграция с Vue Router 0.7.x</h1>
     
     <blockquote>
-<p>Только Vue Router 2 совместим с Vue 2, поэтому, если вы обновляете Vue, вы должны также обновить и Vue Router. Поэтому мы включили описание процесса миграции в основную документацию. Для подробной инструкции по использованию новой версии Vue Router, обратитесь к документации <a href="http://router.vuejs.org/en/" target="_blank" rel="external">Vue Router</a>.</p>
+<p>Только Vue Router 2 совместим с Vue 2, поэтому, если вы обновляете Vue, вы должны также обновить и Vue Router. Поэтому мы включили описание процесса миграции в основную документацию. Для подробной инструкции по использованию новой версии Vue Router, обратитесь к документации <a href="https://router.vuejs.org/ru/" target="_blank" rel="external">Vue Router</a>.</p>
 </blockquote>
 <h2 id="Инициализация-роутера"><a href="#Инициализация-роутера" class="headerlink" title="Инициализация роутера"></a>Инициализация роутера</h2><h3 id="router-start-заменено"><a href="#router-start-заменено" class="headerlink" title="router.start заменено"></a><code>router.start</code> <sup>заменено</sup></h3><p>Более нет никакого специального API для инициализации приложения, с использованием Vue Router. Это означает, что вместо:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.start(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;router-view&gt;&lt;/router-view&gt;'</span></div><div class="line">&#125;, <span class="string">'#app'</span>)</div></pre></td></tr></table></figure>
@@ -795,7 +797,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти вызовы <code>router.start</code>.</p>
 </div>
 
-<h2 id="Объявление-путей"><a href="#Объявление-путей" class="headerlink" title="Объявление путей"></a>Объявление путей</h2><h3 id="router-map-заменено"><a href="#router-map-заменено" class="headerlink" title="router.map заменено"></a><code>router.map</code> <sup>заменено</sup></h3><p>Теперь пути объявляются как массив в <a href="http://router.vuejs.org/en/essentials/getting-started.html#javascript" target="_blank" rel="external">свойстве <code>routes</code></a> при установке роутера. Например, эти пути:</p>
+<h2 id="Объявление-путей"><a href="#Объявление-путей" class="headerlink" title="Объявление путей"></a>Объявление путей</h2><h3 id="router-map-заменено"><a href="#router-map-заменено" class="headerlink" title="router.map заменено"></a><code>router.map</code> <sup>заменено</sup></h3><p>Теперь пути объявляются как массив в <a href="https://router.vuejs.org/ru/essentials/getting-started.html#javascript" target="_blank" rel="external">свойстве <code>routes</code></a> при установке роутера. Например, эти пути:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.map(&#123;</div><div class="line">  <span class="string">'/foo'</span>: &#123;</div><div class="line">    <span class="attr">component</span>: Foo</div><div class="line">  &#125;,</div><div class="line">  <span class="string">'/bar'</span>: &#123;</div><div class="line">    <span class="attr">component</span>: Bar</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>будут объявлены как:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">routes</span>: [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo &#125;,</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'/bar'</span>, <span class="attr">component</span>: Bar &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
@@ -819,14 +821,14 @@
 <h3 id="router-beforeEach-изменён"><a href="#router-beforeEach-изменён" class="headerlink" title="router.beforeEach изменён"></a><code>router.beforeEach</code> <sup>изменён</sup></h3><p><code>router.beforeEach</code> теперь работает асинхронно и принимает функцию <code>next</code> третьим аргументом.</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.beforeEach(<span class="function"><span class="keyword">function</span> (<span class="params">transition</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (transition.to.path === <span class="string">'/forbidden'</span>) &#123;</div><div class="line">    transition.abort()</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    transition.next()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.beforeEach(<span class="function"><span class="keyword">function</span> (<span class="params">to, from, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (to.path === <span class="string">'/forbidden'</span>) &#123;</div><div class="line">    next(<span class="literal">false</span>)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    next()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="subRoutes-переименовано"><a href="#subRoutes-переименовано" class="headerlink" title="subRoutes переименовано"></a><code>subRoutes</code> <sup>переименовано</sup></h3><p><a href="http://router.vuejs.org/en/essentials/nested-routes.html" target="_blank" rel="external">Переименовано в <code>children</code></a> для соответствия Vue другим библиотекам маршрутизации.</p>
+<h3 id="subRoutes-переименовано"><a href="#subRoutes-переименовано" class="headerlink" title="subRoutes переименовано"></a><code>subRoutes</code> <sup>переименовано</sup></h3><p><a href="https://router.vuejs.org/ru/essentials/nested-routes.html" target="_blank" rel="external">Переименовано в <code>children</code></a> для соответствия Vue другим библиотекам маршрутизации.</p>
 
 <div class="upgrade-path">
   <h4>Обновление</h4>
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование свойства <code>subRoutes</code>.</p>
 </div>
 
-<h3 id="router-redirect-заменено"><a href="#router-redirect-заменено" class="headerlink" title="router.redirect заменено"></a><code>router.redirect</code> <sup>заменено</sup></h3><p>Теперь это <a href="http://router.vuejs.org/en/essentials/redirect-and-alias.html" target="_blank" rel="external">опция при объявлении роутера</a>. Например, вам нужно заменить:</p>
+<h3 id="router-redirect-заменено"><a href="#router-redirect-заменено" class="headerlink" title="router.redirect заменено"></a><code>router.redirect</code> <sup>заменено</sup></h3><p>Теперь это <a href="https://router.vuejs.org/ru/essentials/redirect-and-alias.html" target="_blank" rel="external">опция при объявлении роутера</a>. Например, вам нужно заменить:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.redirect(&#123;</div><div class="line">  <span class="string">'/tos'</span>: <span class="string">'/terms-of-service'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>в вашей конфигурации <code>routes</code> на объявление, показанное ниже:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">path</span>: <span class="string">'/tos'</span>,</div><div class="line">  <span class="attr">redirect</span>: <span class="string">'/terms-of-service'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -836,7 +838,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти вызовы <code>router.redirect</code>.</p>
 </div>
 
-<h3 id="router-alias-заменено"><a href="#router-alias-заменено" class="headerlink" title="router.alias заменено"></a><code>router.alias</code> <sup>заменено</sup></h3><p>Теперь это <a href="http://router.vuejs.org/en/essentials/redirect-and-alias.html" target="_blank" rel="external">опция при объявлении роутера</a>, которой вы присваиваете псевдоним. Например, вам нужно заменить:</p>
+<h3 id="router-alias-заменено"><a href="#router-alias-заменено" class="headerlink" title="router.alias заменено"></a><code>router.alias</code> <sup>заменено</sup></h3><p>Теперь это <a href="https://router.vuejs.org/ru/essentials/redirect-and-alias.html" target="_blank" rel="external">опция при объявлении роутера</a>, которой вы присваиваете псевдоним. Например, вам нужно заменить:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.alias(&#123;</div><div class="line">  <span class="string">'/manage'</span>: <span class="string">'/admin'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>в вашей конфигурации <code>routes</code> на объявление, показанное ниже:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">path</span>: <span class="string">'/admin'</span>,</div><div class="line">  <span class="attr">component</span>: AdminPanel,</div><div class="line">  <span class="attr">alias</span>: <span class="string">'/manage'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -868,7 +870,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование устаревшего синтаксиса.</p>
 </div>
 
-<h2 id="Ссылки"><a href="#Ссылки" class="headerlink" title="Ссылки"></a>Ссылки</h2><h3 id="v-link-заменено"><a href="#v-link-заменено" class="headerlink" title="v-link заменено"></a><code>v-link</code> <sup>заменено</sup></h3><p>Директива <code>v-link</code> заменена на новый <a href="http://router.vuejs.org/en/api/router-link.html" target="_blank" rel="external">компонент <code>&lt;router-link&gt;</code></a>, так как за данный тип работ, в Vue 2, теперь отвечают только компоненты. Это означает, что всякий раз, когда у вас есть ссылка, как эта:</p>
+<h2 id="Ссылки"><a href="#Ссылки" class="headerlink" title="Ссылки"></a>Ссылки</h2><h3 id="v-link-заменено"><a href="#v-link-заменено" class="headerlink" title="v-link заменено"></a><code>v-link</code> <sup>заменено</sup></h3><p>Директива <code>v-link</code> заменена на новый <a href="https://router.vuejs.org/ru/api/router-link.html" target="_blank" rel="external">компонент <code>&lt;router-link&gt;</code></a>, так как за данный тип работ, в Vue 2, теперь отвечают только компоненты. Это означает, что всякий раз, когда у вас есть ссылка, как эта:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-link</span>=<span class="string">"'/about'"</span>&gt;</span>About<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>вам необходимо изменить её следующим образом:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/about"</span>&gt;</span>About<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -879,7 +881,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование директивы <code>v-link</code>.</p>
 </div>
 
-<h3 id="v-link-active-заменено"><a href="#v-link-active-заменено" class="headerlink" title="v-link-active заменено"></a><code>v-link-active</code> <sup>заменено</sup></h3><p>Директива <code>v-link-active</code> также была заменена на атрибут <code>tag</code> в <a href="http://router.vuejs.org/en/api/router-link.html" target="_blank" rel="external">компоненте <code>&lt;router-link&gt;</code></a>. Например, вам нужно заменить это:</p>
+<h3 id="v-link-active-заменено"><a href="#v-link-active-заменено" class="headerlink" title="v-link-active заменено"></a><code>v-link-active</code> <sup>заменено</sup></h3><p>Директива <code>v-link-active</code> также была заменена на атрибут <code>tag</code> в <a href="https://router.vuejs.org/ru/api/router-link.html" target="_blank" rel="external">компоненте <code>&lt;router-link&gt;</code></a>. Например, вам нужно заменить это:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-link-active</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">v-link</span>=<span class="string">"'/about'"</span>&gt;</span>About<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>на:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">tag</span>=<span class="string">"li"</span> <span class="attr">to</span>=<span class="string">"/about"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span>&gt;</span>About<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -890,7 +892,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование директивы <code>v-link-active</code>.</p>
 </div>
 
-<h2 id="Programmatic-Navigation"><a href="#Programmatic-Navigation" class="headerlink" title="Programmatic Navigation"></a>Programmatic Navigation</h2><h3 id="router-go-изменено"><a href="#router-go-изменено" class="headerlink" title="router.go изменено"></a><code>router.go</code> <sup>изменено</sup></h3><p>Для соответствия <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="external">HTML5 History API</a>, <code>router.go</code> теперь используется только для <a href="https://router.vuejs.org/en/essentials/navigation.html#routergon" target="_blank" rel="external">навигации вперед/назад</a>, в то время как <a href="http://router.vuejs.org/en/essentials/navigation.html#routerpushlocation" target="_blank" rel="external"><code>router.push</code></a> используется для перехода на конкретную страницу.</p>
+<h2 id="Programmatic-Navigation"><a href="#Programmatic-Navigation" class="headerlink" title="Programmatic Navigation"></a>Programmatic Navigation</h2><h3 id="router-go-изменено"><a href="#router-go-изменено" class="headerlink" title="router.go изменено"></a><code>router.go</code> <sup>изменено</sup></h3><p>Для соответствия <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="external">HTML5 History API</a>, <code>router.go</code> теперь используется только для <a href="https://router.vuejs.org/ru/essentials/navigation.html#routergon" target="_blank" rel="external">навигации вперед/назад</a>, в то время как <a href="https://router.vuejs.org/ru/essentials/navigation.html#routerpushlocation" target="_blank" rel="external"><code>router.push</code></a> используется для перехода на конкретную страницу.</p>
 
 <div class="upgrade-path">
   <h4>Обновление</h4>
@@ -904,7 +906,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование опции <code>hashbang: false</code>.</p>
 </div>
 
-<h3 id="history-true-заменено"><a href="#history-true-заменено" class="headerlink" title="history: true заменено"></a><code>history: true</code> <sup>заменено</sup></h3><p>Все параметры режима роутера были объединены в <a href="http://router.vuejs.org/en/api/options.html#mode" target="_blank" rel="external">опцию <code>mode</code></a>. Обновите:</p>
+<h3 id="history-true-заменено"><a href="#history-true-заменено" class="headerlink" title="history: true заменено"></a><code>history: true</code> <sup>заменено</sup></h3><p>Все параметры режима роутера были объединены в <a href="https://router.vuejs.org/ru/api/options.html#mode" target="_blank" rel="external">опцию <code>mode</code></a>. Обновите:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">history</span>: <span class="string">'true'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>на:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">mode</span>: <span class="string">'history'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
@@ -914,7 +916,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование опции <code>history: true</code>.</p>
 </div>
 
-<h3 id="abstract-true-заменено"><a href="#abstract-true-заменено" class="headerlink" title="abstract: true заменено"></a><code>abstract: true</code> <sup>заменено</sup></h3><p>Все параметры режима роутера были объединены в <a href="http://router.vuejs.org/en/api/options.html#mode" target="_blank" rel="external">опцию <code>mode</code></a>. Обновите:</p>
+<h3 id="abstract-true-заменено"><a href="#abstract-true-заменено" class="headerlink" title="abstract: true заменено"></a><code>abstract: true</code> <sup>заменено</sup></h3><p>Все параметры режима роутера были объединены в <a href="https://router.vuejs.org/ru/api/options.html#mode" target="_blank" rel="external">опцию <code>mode</code></a>. Обновите:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">abstract</span>: <span class="string">'true'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>на:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">  <span class="attr">mode</span>: <span class="string">'abstract'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
@@ -924,7 +926,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование опции <code>abstract: true</code>.</p>
 </div>
 
-<h2 id="Опции-роутера-разное"><a href="#Опции-роутера-разное" class="headerlink" title="Опции роутера: разное"></a>Опции роутера: разное</h2><h3 id="saveScrollPosition-заменено"><a href="#saveScrollPosition-заменено" class="headerlink" title="saveScrollPosition заменено"></a><code>saveScrollPosition</code> <sup>заменено</sup></h3><p>Было заменено на <a href="http://router.vuejs.org/en/advanced/scroll-behavior.html" target="_blank" rel="external">опцию <code>scrollBehavior</code></a> которая принимает функцию, поэтому поведение прокрутки стало полностью настраиваемым - даже для каждого пути. Это открывает много новых возможностей, (but to simply replicate the old behavior of)?:</p>
+<h2 id="Опции-роутера-разное"><a href="#Опции-роутера-разное" class="headerlink" title="Опции роутера: разное"></a>Опции роутера: разное</h2><h3 id="saveScrollPosition-заменено"><a href="#saveScrollPosition-заменено" class="headerlink" title="saveScrollPosition заменено"></a><code>saveScrollPosition</code> <sup>заменено</sup></h3><p>Было заменено на <a href="https://router.vuejs.org/ru/advanced/scroll-behavior.html" target="_blank" rel="external">опцию <code>scrollBehavior</code></a> которая принимает функцию, поэтому поведение прокрутки стало полностью настраиваемым - даже для каждого пути. Это открывает много новых возможностей, (but to simply replicate the old behavior of)?:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">saveScrollPosition: <span class="literal">true</span></div></pre></td></tr></table></figure>
 <p>Вы можете заменить это на:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">scrollBehavior: <span class="function"><span class="keyword">function</span> (<span class="params">to, from, savedPosition</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> savedPosition || &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -955,14 +957,14 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование опции <code>suppressTransitionError: true</code>.</p>
 </div>
 
-<h2 id="Хуки-путей"><a href="#Хуки-путей" class="headerlink" title="Хуки путей"></a>Хуки путей</h2><h3 id="activate-заменено"><a href="#activate-заменено" class="headerlink" title="activate заменено"></a><code>activate</code> <sup>заменено</sup></h3><p>Вместо этого используйте <a href="http://router.vuejs.org/en/advanced/navigation-guards.html#incomponent-guards" target="_blank" rel="external"><code>beforeRouteEnter</code></a> в компоненте.</p>
+<h2 id="Хуки-путей"><a href="#Хуки-путей" class="headerlink" title="Хуки путей"></a>Хуки путей</h2><h3 id="activate-заменено"><a href="#activate-заменено" class="headerlink" title="activate заменено"></a><code>activate</code> <sup>заменено</sup></h3><p>Вместо этого используйте <a href="https://router.vuejs.org/ru/advanced/navigation-guards.html#incomponent-guards" target="_blank" rel="external"><code>beforeRouteEnter</code></a> в компоненте.</p>
 
 <div class="upgrade-path">
   <h4>Обновление</h4>
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование хука <code>beforeRouteEnter</code>.</p>
 </div>
 
-<h3 id="canActivate-заменено"><a href="#canActivate-заменено" class="headerlink" title="canActivate заменено"></a><code>canActivate</code> <sup>заменено</sup></h3><p>Вместо этого используйте <a href="http://router.vuejs.org/en/advanced/navigation-guards.html#perroute-guard" target="_blank" rel="external"><code>beforeEnter</code></a> в компоненте.</p>
+<h3 id="canActivate-заменено"><a href="#canActivate-заменено" class="headerlink" title="canActivate заменено"></a><code>canActivate</code> <sup>заменено</sup></h3><p>Вместо этого используйте <a href="https://router.vuejs.org/ru/advanced/navigation-guards.html#perroute-guard" target="_blank" rel="external"><code>beforeEnter</code></a> в компоненте.</p>
 
 <div class="upgrade-path">
   <h4>Обновление</h4>
@@ -976,7 +978,7 @@
   <p>Запустите <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">миграционного помощника</a> в вашем проекте, чтобы найти использование хука <code>deactivate</code>.</p>
 </div>
 
-<h3 id="canDeactivate-заменено"><a href="#canDeactivate-заменено" class="headerlink" title="canDeactivate заменено"></a><code>canDeactivate</code> <sup>заменено</sup></h3><p>Вместо этого используйт <a href="http://router.vuejs.org/en/advanced/navigation-guards.html#incomponent-guards" target="_blank" rel="external"><code>beforeRouteLeave</code></a> в компоненте.</p>
+<h3 id="canDeactivate-заменено"><a href="#canDeactivate-заменено" class="headerlink" title="canDeactivate заменено"></a><code>canDeactivate</code> <sup>заменено</sup></h3><p>Вместо этого используйт <a href="https://router.vuejs.org/ru/advanced/navigation-guards.html#incomponent-guards" target="_blank" rel="external"><code>beforeRouteLeave</code></a> в компоненте.</p>
 
 <div class="upgrade-path">
   <h4>Обновление</h4>
@@ -1018,6 +1020,20 @@
       </div>
     
     <div class="footer">
+      <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<div class="bsa-cpc"></div>
+<script>
+  (function(){
+    if(typeof _bsa !== 'undefined' && _bsa) {
+    _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+      target: '.bsa-cpc',
+      align: 'horizontal',
+      disable_css: 'true'
+    });
+      }
+  })();
+</script>
+
       Обнаружили ошибку или хотите добавить что-то своё в документацию?
       <a href="https://github.com/translation-gang/ru.vuejs.org/blob/master/src/v2/guide/migration-vue-router.md" target="_blank">
         Отредактируйте эту страницу на Github!
