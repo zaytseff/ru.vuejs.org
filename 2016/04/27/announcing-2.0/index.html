@@ -85,9 +85,17 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link">Руководство</a></li>
-<li><a href="/v2/api/" class="nav-link">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">Обучение</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link">Руководство</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">Экосистема</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -120,6 +128,20 @@
 
 
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">Поддержать нас на OpenCollective</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">Поддержать Evan на Patreon</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">Translations</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -132,9 +154,6 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">Магазин</a>
-</li>
 
   </ul>
 </div>
@@ -150,9 +169,17 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link">Руководство</a></li>
-<li><a href="/v2/api/" class="nav-link">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link">Обучение</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link">Руководство</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">Экосистема</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -185,6 +212,20 @@
 
 
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">Поддержать нас на OpenCollective</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">Поддержать Evan на Patreon</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">Translations</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -197,9 +238,6 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">Магазин</a>
-</li>
 
       </ul>
       <div class="list">
@@ -272,7 +310,7 @@
   <h4>Apr 27, 2016</h4>
   <p>Today I am thrilled to announce the first public preview of Vue.js 2.0, which brings along many exciting improvements and new features. Let’s take a peek at what’s in store!</p>
 <a id="more"></a>
-<h2 id="Even-Leaner-Even-Faster"><a href="#Even-Leaner-Even-Faster" class="headerlink" title="Even Leaner, Even Faster"></a>Even Leaner, Even Faster</h2><p>Vue.js has always focused on staying light and fast, but 2.0 pushes it even further. The rendering layer is now based on a lightweight virtual-DOM implementation (based on <a href="https://github.com/paldepind/snabbdom" target="_blank" rel="external">Snabbdom</a>) that improves initial rendering speed and memory consumption by up to 2~4x in most scenarios (check out <a href="https://github.com/vuejs/vue/tree/next/benchmarks" target="_blank" rel="external">these benchmarks</a>). The template-to-virtual-DOM compiler and the runtime can be separated, so you can pre-compile templates and ship your app with only the runtime, which is less than 12kb min+gzip (as a reference, React 15 is 44kb min+gzip). The compiler also works in the browser, which means you can still drop in one script tag and start hacking, just like before. Even with the compiler included, the build is sitting at 17kb min+gzip, still lighter than the current 1.0 build.</p>
+<h2 id="Even-Leaner-Even-Faster"><a href="#Even-Leaner-Even-Faster" class="headerlink" title="Even Leaner, Even Faster"></a>Even Leaner, Even Faster</h2><p>Vue.js has always focused on staying light and fast, but 2.0 pushes it even further. The rendering layer is now based on a lightweight virtual-DOM implementation (based on <a href="https://github.com/paldepind/snabbdom" target="_blank" rel="external">Snabbdom</a>) that improves initial rendering speed and memory consumption by up to 2~4x in most scenarios (check out <a href="https://github.com/vuejs/vue/tree/next/benchmarks" target="_blank" rel="external">these benchmarks</a>). The template-to-virtual-DOM compiler and the runtime can be separated, so you can pre-compile templates and ship your app with only the runtime, which is less than 12KB min+gzip (as a reference, React 15 is 44KB min+gzip). The compiler also works in the browser, which means you can still drop in one script tag and start hacking, just like before. Even with the compiler included, the build is sitting at 17KB min+gzip, still lighter than the current 1.0 build.</p>
 <h2 id="Not-Your-Average-Virtual-DOM"><a href="#Not-Your-Average-Virtual-DOM" class="headerlink" title="Not Your Average Virtual-DOM"></a>Not Your Average Virtual-DOM</h2><p>Now, just virtual-DOM sounds boring because there are so many implementations out there - but this one is different. Combined with Vue’s reactivity system, it provides optimized re-rendering out of the box without you having to do anything. Each component keeps track of its reactive dependencies during its render, so the system knows precisely when to re-render, and which components to re-render. No need for <code>shouldComponentUpdate</code> or immutable data structures - <strong>it just works</strong>.</p>
 <p>In addition, Vue 2.0 applies some advanced optimizations during the template-to-virtual-DOM compilation phase:</p>
 <ol>

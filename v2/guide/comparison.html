@@ -85,9 +85,17 @@
     <input type="text" id="search-query-nav" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link current">Руководство</a></li>
-<li><a href="/v2/api/" class="nav-link">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Обучение</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Руководство</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">Экосистема</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -120,6 +128,20 @@
 
 
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">Поддержать нас на OpenCollective</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">Поддержать Evan на Patreon</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">Translations</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -132,9 +154,6 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">Магазин</a>
-</li>
 
   </ul>
 </div>
@@ -151,9 +170,17 @@
     <input type="text" id="search-query-sidebar" class="search-query st-default-search-input">
   </form>
 </li>
-<li><a href="/v2/guide/" class="nav-link current">Руководство</a></li>
-<li><a href="/v2/api/" class="nav-link">API</a></li>
-<li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+<li class="nav-dropdown-container learn">
+  <a class="nav-link current">Обучение</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="/v2/guide/" class="nav-link current">Руководство</a></li>
+      <li><a href="/v2/api/" class="nav-link">API</a></li>
+      <li><a href="/v2/examples/" class="nav-link">Примеры</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container ecosystem">
   <a class="nav-link">Экосистема</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -186,6 +213,20 @@
 
 
 
+<li>
+  <a href="/v2/guide/team.html" class="nav-link team">Команда</a>
+</li>
+<li class="nav-dropdown-container support-vue">
+  <a class="nav-link">Поддержать Vue</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><ul>
+      <li><a href="https://vue.threadless.com" target="_blank" class="nav-link">Магазин</a></li>
+      <li><a href="https://opencollective.com/vuejs" target="_blank" class="nav-link">Поддержать нас на OpenCollective</a></li>
+      <li><a href="https://www.patreon.com/evanyou" target="_blank" class="nav-link">Поддержать Evan на Patreon</a></li>
+    </ul></li>
+  </ul>
+</li>
+
 <li class="nav-dropdown-container language">
   <a class="nav-link">Translations</a><span class="arrow"></span>
   <ul class="nav-dropdown">
@@ -198,9 +239,6 @@
   </ul>
 </li>
 
-<li>
-  <a href="https://vue.threadless.com" target="_blank" class="nav-link shop">Магазин</a>
-</li>
 
         </ul>
         <div class="list">
@@ -839,7 +877,7 @@
 <p>Важно заметить, что многие из этих ограничений — следствия сознательно принятых решений команды create-react-app, и в них есть и свои плюсы. Например, коль скоро ваш проект не требует пользовательской настройки процесса сборки, её можно будет обновлять как зависимость. Прочитать больше об этом подходе <a href="https://github.com/facebookincubator/create-react-app#philosophy" target="_blank" rel="external">можно здесь</a>.</p>
 <h4 id="Масштабирование-вниз"><a href="#Масштабирование-вниз" class="headerlink" title="Масштабирование вниз"></a>Масштабирование вниз</h4><p>React известен своей довольно крутой кривой изучения. До того момента, когда новичок сможет что-то написать, ему придётся узнать о JSX, а вероятно — и о ES2015+, поскольку многие примеры используют синтаксис ES2015-классов. Кроме того придётся разобраться с системами сборки, поскольку, хотя технически и существует возможность использовать Babel самостоятельно для live-компиляции кода, для production этот подход в любом случае не годится.</p>
 <p>Vue масштабируется вверх ничуть не хуже (если не лучше), чем React, и в то же время его можно масштабировать и вниз — вплоть до варианта использования вместе с jQuery. Именно так — в простейшем случае достаточно просто добавить тег скрипта на HMTL-страницу.</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Начиная с этого момента можно писать код на Vue, и даже использовать production-версию, не мучаясь угрызениями совести и волнениями насчёт производительности.</p>
 <p>Поскольку знания JSX, ES2015 и систем сборки не требуется для начала работы с Vue, в среднем у новых разработчиков уходит не больше дня на чтение <a href="./">руководства</a>, позволяющего узнать достаточно для построения нетривиальных приложений.</p>
 <h3 id="Нативный-рендеринг"><a href="#Нативный-рендеринг" class="headerlink" title="Нативный рендеринг"></a>Нативный рендеринг</h3><p>React Native позволяет писать нативные приложения для iOS и Android, используя ту же самую модель компонент React’а. Это — прекрасно, так как позволяет разработчикам применить знание одного и того же фреймворка на различных платформах. В этой области, Vue официально поддерживает проект <a href="https://alibaba.github.io/weex/" target="_blank" rel="external">Weex</a> — кросс-платформенный UI-фреймворк, разрабатываемый Alibaba Group и использующий Vue в качестве основного JavaScript-фреймворка. Это значит, что с Weex вы можете использовать тот же синтаксис Vue для создания компонентов, которые не только могут отображаться в браузере, но и также нативными элементами в iOS и Android!</p>
@@ -860,7 +898,7 @@
 <p>Однако не все хотят использовать TypeScript. Часто для небольших приложений введение системы типов может привести к большему увеличению накладных расходов нежели увеличению производительности разработки. В таких случаях вам лучше воспользоваться Vue, так как использовать Angular без TypeScript может быть сложным.</p>
 <p>Наконец, хотя Vue и не так глубоко интегрирован с TypeScript как Angular, но предоставляет <a href="https://github.com/vuejs/vue/tree/dev/types" target="_blank" rel="external">официальные декларации типов</a> и <a href="https://github.com/vuejs/vue-class-component" target="_blank" rel="external">официальный декоратор</a> для тех, кто хочет использовать TypeScript с Vue. Мы также активно сотрудничаем с командами TypeScript и VSCode в Microsoft, чтобы улучшить опыт TS/IDE для пользователей Vue + TS.</p>
 <h3 id="Размер-и-быстродействие"><a href="#Размер-и-быстродействие" class="headerlink" title="Размер и быстродействие"></a>Размер и быстродействие</h3><p>В смысле производительности, оба фреймворка весьма быстры, и пока нет достаточных данных из реального мира чтобы вынести окончательный вердикт. Но если вы всё же хотите цифр, похоже что Vue 2.0 всё-таки обгоняет Angular, по крайней мере если верить этому <a href="http://stefankrause.net/js-frameworks-benchmark4/webdriver-ts/table.html" target="_blank" rel="external">стороннему исследованию производительности</a>.</p>
-<p>Последние версии Angular, с AOT-компиляцией и tree-shaking, смогли значительно уменьшить размер сборок. Однако полнофункциональный проект Vue 2 с включёнными Vuex + Vue Router (~30kb gzip) по-прежнему значительно легче из коробки, чем AOT-скомпилированное приложение, созданное с помощью <code>angular-cli</code> (~130kb gzip).</p>
+<p>Последние версии Angular, с AOT-компиляцией и tree-shaking, смогли значительно уменьшить размер сборок. Однако полнофункциональный проект Vue 2 с включёнными Vuex + Vue Router (~30КБ gzip) по-прежнему значительно легче из коробки, чем AOT-скомпилированное приложение, созданное с помощью <code>angular-cli</code> (~130КБ gzip).</p>
 <h3 id="Гибкость"><a href="#Гибкость" class="headerlink" title="Гибкость"></a>Гибкость</h3><p>Vue значительно менее упрям, чем Angular, и поддерживает множество различных систем сборок, не ограничивая разработчиков в том, какую структуру использовать для приложения. Многим программистам эта свобода нравится, хотя есть и те, кто предпочитают иметь единственно-правильный способ построения приложения.</p>
 <h3 id="Кривая-обучения"><a href="#Кривая-обучения" class="headerlink" title="Кривая обучения"></a>Кривая обучения</h3><p>Всё что необходимо для начала работы с Vue — это знакомство с HTML и обыкновенным (ES5) JavaScript’ом. С этими базовыми навыками вы уже можете начать строить нетривиальные приложения после менее чем однодневного прочтения <a href="./">руководства</a>.</p>
 <p>Кривая обучения у Angular гораздо круче. API фреймворка просто огромное и вам как пользователю нужно будет разобраться с большим количеством концепций, прежде чем стать продуктивным. Очевидно, что сложность Angular во многом обусловлена его направленностью только на большие, комплексные приложения — но это делает платформу намного более трудной для менее опытных разработчиков.</p>
