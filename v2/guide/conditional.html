@@ -919,7 +919,7 @@ new Vue({
 <h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a><code>v-show</code></h2><p>Ещё одну возможность условного отображения даёт директива <code>v-show</code>. Используется она так же:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">"ok"</span>&gt;</span>Привет!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Разница состоит в том, что элемент с <code>v-show</code> будет всегда оставаться в DOM, а изменяться будет лишь свойство <code>display</code> в его параметрах CSS.</p>
-<p class="tip">Обратите внимание, что <code>v-show</code> не поддерживает использование <code>&lt;template&gt;</code> и не работает с <code>v-else</code>.</p>
+<p class="tip">Обратите внимание, что <code>v-show</code> не поддерживает использование элемента <code>&lt;template&gt;</code> и не работает с <code>v-else</code>.</p>
 
 <h2 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs v-show"></a><code>v-if</code> vs <code>v-show</code></h2><p><code>v-if</code> производит “настоящий” условный рендеринг, удостоверяясь что подписчики событий и дочерние компоненты внутри блока должным образом уничтожаются и воссоздаются при изменении истинности управляющего условия.</p>
 <p><code>v-if</code> также <strong>ленив</strong>: если условие ложно на момент первоначального рендеринга, он не произведёт никаких действий — условный блок не будет отображён, пока условие впервые не станет истинным.</p>
