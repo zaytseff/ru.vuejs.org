@@ -375,7 +375,7 @@
 <li><p><strong>По умолчанию:</strong> <code>[]</code></p>
 </li>
 <li><p><strong>Использование:</strong></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.config.ignoredElements = [</div><div class="line">  <span class="string">'my-custom-web-component'</span>,</div><div class="line">  <span class="string">'another-web-component'</span>,</div><div class="line">  <span class="comment">// Используйте RegExp чтобы игнорировать все элементы, начинающиеся с "ion-"</span></div><div class="line">  <span class="comment">// Добавлено в версии 2.5.0+</span></div><div class="line">  /^ion-<span class="regexp">/</span></div><div class="line"><span class="regexp">]</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.config.ignoredElements = [</div><div class="line">  <span class="string">'my-custom-web-component'</span>,</div><div class="line">  <span class="string">'another-web-component'</span>,</div><div class="line">  <span class="comment">// Используйте `RegExp` чтобы игнорировать все элементы, начинающиеся с "ion-"</span></div><div class="line">  <span class="comment">// Добавлено в версии 2.5.0+</span></div><div class="line">  /^ion-<span class="regexp">/</span></div><div class="line"><span class="regexp">]</span></div></pre></td></tr></table></figure>
 <p>Позволяет Vue игнорировать пользовательские компоненты, установленные за пределами Vue (например, используя Web Components API). Иначе возникнет предупреждение о “Неизвестном пользовательском элементе”, означающее, что вы забыли зарегистрировать глобальный компонент или допустили ошибку в написании имени компонента.</p>
 </li>
 </ul>
