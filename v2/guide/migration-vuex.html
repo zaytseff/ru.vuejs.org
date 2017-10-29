@@ -258,9 +258,12 @@
         </ul>
         <div class="list">
             <div class="main-sponsor">
-                <span>Платиновый спонсор</span><br>
+                <span>Платиновые спонсоры</span><br>
                 <a href="https://stdlib.com" target="_blank" class="logo">
                     <img src="/images/stdlib.png">
+                </a>
+                <a href="http://tooltwist.com/" target="_blank" class="logo">
+                  <img src="/images/tooltwist.png">
                 </a>
             </div>
             <a class="become-backer" href="/support-vuejs">
@@ -846,7 +849,7 @@
 <p>Однако, они имеют различные целевые аудитории.</p>
 <p><strong>Vuex 2.0</strong> радикально переписан и имеет упрощенный API, для тех, кто начинает новые проекты или хочет быть на острие прогресса в области управления состоянием фронтенд-приложений. <strong>Он не покрывается данной инструкцией по миграции</strong>, поэтому если вы хотите узнать о нём больше — обратитесь к <a href="https://vuex.vuejs.org/ru/index.html" target="_blank" rel="external">документации Vuex 2.0</a>.</p>
 <p><strong>Vuex 1.0</strong> обратно совместим, и требует внесения лишь довольно незначительных изменений при обновлении. Рекомендуется для тех, кто уже имеет дело с большими проектами, либо, для тех, кто просто хочет постепенно обновиться до Vue 2.0. Данное руководство призвано содействовать этому процессу, но включает в себя только заметки по миграции. Для изучения полного руководство по использованию обратитесь к <a href="https://github.com/vuejs/vuex/tree/1.0/docs/en" target="_blank" rel="external">документации Vuex 1.0</a>.</p>
-<h2 id="store-watch-со-строковым-параметром-заменено"><a href="#store-watch-со-строковым-параметром-заменено" class="headerlink" title="store.watch со строковым параметром заменено"></a><code>store.watch</code> со строковым параметром <sup>заменено</sup></h2><p><code>store.watch</code> теперь принимает в качестве аргумента только функции. Например, выдолжны заменить:</p>
+<h2 id="store-watch-со-строковым-параметром-заменено"><a href="#store-watch-со-строковым-параметром-заменено" class="headerlink" title="store.watch со строковым параметром заменено"></a><code>store.watch</code> со строковым параметром <sup>заменено</sup></h2><p><code>store.watch</code> теперь принимает в качестве аргумента только функции. Например, вы должны заменить:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.watch(<span class="string">'user.notifications'</span>, callback)</div></pre></td></tr></table></figure>
 <p>на:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">store.watch(</div><div class="line">  <span class="comment">// Когда возвращаемый результат изменится...</span></div><div class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">state</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> state.user.notifications</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// Запустится коллбэк</span></div><div class="line">  callback</div><div class="line">)</div></pre></td></tr></table></figure>
