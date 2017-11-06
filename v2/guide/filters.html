@@ -159,6 +159,7 @@
     <li><a href="https://kr.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">한국어</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Português</a></li>
     <li><a href="https://fr.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -251,6 +252,7 @@
     <li><a href="https://kr.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">한국어</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Português</a></li>
     <li><a href="https://fr.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/filters.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -840,8 +842,11 @@
     
     <p>Для распространённых задач форматирования текста во Vue используются фильтры. Они находят своё применение в двух местах: <strong>в mustache-интерполяциях и в выражениях <code>v-bind</code></strong> (последнее поддерживается в 2.1.0+). Фильтры добавляются в конце выражения JavaScript и отделяются вертикальной чертой:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- mustache --&gt;</span></div><div class="line">&#123;&#123; message | capitalize &#125;&#125;</div><div class="line"></div><div class="line"><span class="comment">&lt;!-- v-bind --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"rawId | formatId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Вы можете определить локальные фильтры в опциях компонента:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">filters: &#123;</div><div class="line">  capitalize: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">    value = value.toString()</div><div class="line">    <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>или определить фильтр глобально:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.filter(<span class="string">'capitalize'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">  value = value.toString()</div><div class="line">  <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>Функция фильтра всегда принимает значение выражения (результат предыдущей цепочки) в качестве первого аргумента. В этом примере функция фильтра <code>capitalize</code> получит значение <code>message</code> в качестве аргумента.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">  filters: &#123;</div><div class="line">    capitalize: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></div><div class="line">      value = value.toString()</div><div class="line">      <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>Фильтры можно объединять в цепочки:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</div></pre></td></tr></table></figure>
 <p>В этом случае <code>filterA</code>, определённый с одним аргументом, получит значение <code>message</code>, а затем функция <code>filterB</code> будет вызвана с результатом <code>filterA</code>, переданным единственным аргументов в <code>filterB</code>.</p>

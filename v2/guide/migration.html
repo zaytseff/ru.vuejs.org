@@ -159,6 +159,7 @@
     <li><a href="https://kr.vuejs.org/v2/guide/migration.html" class="nav-link" target="_blank">한국어</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/migration.html" class="nav-link" target="_blank">Português</a></li>
     <li><a href="https://fr.vuejs.org/v2/guide/migration.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/migration.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -251,6 +252,7 @@
     <li><a href="https://kr.vuejs.org/v2/guide/migration.html" class="nav-link" target="_blank">한국어</a></li>
     <li><a href="https://br.vuejs.org/v2/guide/migration.html" class="nav-link" target="_blank">Português</a></li>
     <li><a href="https://fr.vuejs.org/v2/guide/migration.html" class="nav-link" target="_blank">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/guide/migration.html" class="nav-link" target="_blank">Tiếng Việt</a></li>
   </ul>
 </li>
 
@@ -872,14 +874,14 @@
 </blockquote>
 <p>Only Vue Router 2 is compatible with Vue 2, so yes, you’ll have to follow the <a href="migration-vue-router.html">migration path for Vue Router</a> as well. Fortunately, most applications don’t have a lot of router code, so this likely won’t take more than an hour.</p>
 <p>As for Vuex, even version 0.8 is compatible with Vue 2, so you’re not forced to upgrade. The only reason you may want to upgrade immediately is to take advantage of the new features in Vuex 2, such as modules and reduced boilerplate.</p>
-<h2 id="Templates"><a href="#Templates" class="headerlink" title="Templates"></a>Templates</h2><h3 id="Fragment-Instances-removed"><a href="#Fragment-Instances-removed" class="headerlink" title="Fragment Instances removed"></a>Fragment Instances <sup>removed</sup></h3><p>Every component must have exactly one root element. Fragment instances are no longer allowed. If you have a template like this:</p>
+<h2 id="Шаблоны"><a href="#Шаблоны" class="headerlink" title="Шаблоны"></a>Шаблоны</h2><h3 id="Фрагментированные-экземпляры-удалены"><a href="#Фрагментированные-экземпляры-удалены" class="headerlink" title="Фрагментированные экземпляры удалены"></a>Фрагментированные экземпляры <sup>удалены</sup></h3><p>Каждый компонент должен содержать только один корневой элемент. Фрагментированные экземпляры больше не используются. Если ваш шаблон выглядит следующим образом:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>foo<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>bar<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>It’s recommended to simply wrap the entire contents in a new element, like this:</p>
+<p>Рекомендовано заменить код, просто обернув всё содержимое в новый элемент, например, вот так:</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>foo<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>bar<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <div class="upgrade-path">
-  <h4>Upgrade Path</h4>
-  <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about multiple root elements in a template.</p>
+  <h4>Как обновлять</h4>
+  <p>Запустите ваше end-to-end тестирование или приложение после обновления и проверьте <strong>предупреждения консоли</strong> о множестве корневых элементов в шаблоне.</p>
 </div>
 
 <h2 id="Хуки-жизненного-цикла"><a href="#Хуки-жизненного-цикла" class="headerlink" title="Хуки жизненного цикла"></a>Хуки жизненного цикла</h2><h3 id="beforeCompile-удалён"><a href="#beforeCompile-удалён" class="headerlink" title="beforeCompile удалён"></a><code>beforeCompile</code> <sup>удалён</sup></h3><p>Вместо этого используйте <code>created</code> в вашем компоненте.</p>
