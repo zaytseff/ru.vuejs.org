@@ -856,8 +856,8 @@ new Vue({
 })
 </script>
 
-<p>После загрузки страницы этот элемент получает фокус ввода (примечание: автофокус не работает на мобильном  Safari). Если вы никуда не кликнули с момента открытия этой главы руководства, фокус ввода и сейчас должен быть на этом элементе. Рассмотрим директиву подробнее:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Регистрируем глобальную пользовательскую директиву v-focus</span></div><div class="line">Vue.directive(<span class="string">'focus'</span>, &#123;</div><div class="line">  <span class="comment">// Когда привязанный элемент вставлен в DOM...</span></div><div class="line">  inserted: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</div><div class="line">    <span class="comment">// Переключаем фокус на элемент</span></div><div class="line">    el.focus()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>После загрузки страницы этот элемент получает фокус ввода (примечание: <code>autofocus</code> не работает на мобильном Safari). Если вы никуда не кликнули с момента открытия этой главы руководства, фокус ввода и сейчас должен быть на этом элементе. Рассмотрим директиву подробнее:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// Регистрируем глобальную пользовательскую директиву `v-focus`</span></div><div class="line">Vue.directive(<span class="string">'focus'</span>, &#123;</div><div class="line">  <span class="comment">// Когда привязанный элемент вставлен в DOM...</span></div><div class="line">  inserted: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</div><div class="line">    <span class="comment">// Переключаем фокус на элемент</span></div><div class="line">    el.focus()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>Чтобы зарегистрировать директиву локально, можно передать опцию <code>directives</code> при определении компонента:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">directives: &#123;</div><div class="line">  focus: &#123;</div><div class="line">    <span class="comment">// определение директивы</span></div><div class="line">    inserted: <span class="function"><span class="keyword">function</span> (<span class="params">el</span>) </span>&#123;</div><div class="line">      el.focus()</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Теперь в шаблонах можно использовать новый атрибут <code>v-focus</code>:</p>
@@ -878,18 +878,18 @@ new Vue({
 <p>В следующем разделе мы рассмотрим аргументы, передаваемые в эти хуки (а именно, <code>el</code>, <code>binding</code>, <code>vnode</code> и <code>oldVnode</code>).</p>
 <h2 id="Аргументы-хуков"><a href="#Аргументы-хуков" class="headerlink" title="Аргументы хуков"></a>Аргументы хуков</h2><p>В хуки передаются следующие параметры:</p>
 <ul>
-<li><strong>el</strong>: Элемент, к которому привязана директива. Можно использовать для прямых манипуляций с DOM.</li>
-<li><strong>binding</strong>: Объект, содержащий следующие свойства:<ul>
-<li><strong>name</strong>: Название директивы, без указания префикса <code>v-</code>.</li>
-<li><strong>value</strong>: Значение, переданное в директиву. Например, для <code>v-my-directive=&quot;1 + 1&quot;</code> значением будет <code>2</code>.</li>
-<li><strong>oldValue</strong>: Предыдущее переданное в директиву значение. Доступно только для хуков <code>update</code> и <code>componentUpdated</code> и передаётся независимо от того, произошло ли в действительности его изменение.</li>
-<li><strong>expression</strong>: Выражение-строка, переданное в директиву. Например, для <code>v-my-directive=&quot;1 + 1&quot;</code> это будет <code>&quot;1 + 1&quot;</code>.</li>
-<li><strong>arg</strong>: Аргумент, переданный в директиву, в случае его наличия. Например, для <code>v-my-directive:foo</code> это будет <code>&quot;foo&quot;</code>.</li>
-<li><strong>modifiers</strong>: Объект, содержащий модификаторы, если они есть. Например, для <code>v-my-directive.foo.bar</code>, объектом модификаторов будет <code>{ foo: true, bar: true }</code>.</li>
+<li><code>el</code>: Элемент, к которому привязана директива. Можно использовать для прямых манипуляций с DOM.</li>
+<li><code>binding</code>: Объект, содержащий следующие свойства:<ul>
+<li><code>name</code>: Название директивы, без указания префикса <code>v-</code>.</li>
+<li><code>value</code>: Значение, переданное в директиву. Например, для <code>v-my-directive=&quot;1 + 1&quot;</code> значением будет <code>2</code>.</li>
+<li><code>oldValue</code>: Предыдущее переданное в директиву значение. Доступно только для хуков <code>update</code> и <code>componentUpdated</code> и передаётся независимо от того, произошло ли в действительности его изменение.</li>
+<li><code>expression</code>: Выражение-строка, переданное в директиву. Например, для <code>v-my-directive=&quot;1 + 1&quot;</code> это будет <code>&quot;1 + 1&quot;</code>.</li>
+<li><code>arg</code>: Аргумент, переданный в директиву, в случае его наличия. Например, для <code>v-my-directive:foo</code> это будет <code>&quot;foo&quot;</code>.</li>
+<li><code>modifiers</code>: Объект, содержащий модификаторы, если они есть. Например, для <code>v-my-directive.foo.bar</code>, объектом модификаторов будет <code>{ foo: true, bar: true }</code>.</li>
 </ul>
 </li>
-<li><strong>vnode</strong>: Виртуальный элемент, созданный компилятором Vue. См. <a href="../api/#Интерфейс-VNode">VNode API</a> для подробностей.</li>
-<li><strong>oldVnode</strong>: Предыдущий виртуальный элемент, доступный только для хуков <code>update</code> и <code>componentUpdated</code>.</li>
+<li><code>vnode</code>: Виртуальный элемент, созданный компилятором Vue. См. <a href="../api/#Интерфейс-VNode">VNode API</a> для подробностей.</li>
+<li><code>oldVnode</code>: Предыдущий виртуальный элемент, доступный только для хуков <code>update</code> и <code>componentUpdated</code>.</li>
 </ul>
 <p class="tip">Все аргументы кроме <code>el</code> следует понимать как только для чтения и никогда не изменять их. В случае необходимости передать информацию между хуками рекомендуем воспользоваться <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="external">dataset</a>.</p>
 

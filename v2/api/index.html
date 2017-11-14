@@ -1420,6 +1420,8 @@
 <li><p><strong>Подробности:</strong></p>
 <p>Управляет HTML-содержимым элемента (<code>innerHTML</code>). <strong>Обратите внимание, что содержимое вставляется как обычный HTML — то есть не компилируется как шаблон Vue</strong>. Не стоит организовывать вложенные шаблоны с помощью <code>v-html</code>, попробуйте лучше применить компоненты.</p>
 <p class="tip">Динамический рендеринг произвольного HTML-кода на сайте — это очень опасная практика, легко приводящая к <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="external">XSS-уязвимостям</a>. Передавайте в <code>v-html</code> только содержимое, которому можно доверять, и <strong>никогда</strong> — необработанный пользовательский ввод.</p>
+
+<p class="tip">В <a href="../guide/single-file-components.html">однофайловых компонентах</a> <code>scoped</code> стили не будут применены к содержимому внутри <code>v-html</code>, потому что этот HTML не обрабатывается компилятором шаблонов Vue. Если вы хотите стилизовать содержимое <code>v-html</code> с помощью локального CSS, то вы можете вместо этого использовать <a href="https://vue-loader.vuejs.org/ru/features/css-modules.html" target="_blank" rel="external">CSS-модули</a> или дополнительный глобальный элемент <code>&lt;style&gt;</code> с иной стратегией, такой как БЭМ.</p>
 </li>
 <li><p><strong>Пример:</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">"html"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -1668,14 +1670,23 @@
 <li><p><strong>См. также:</strong> <a href="../guide/components.html#Именованные-слоты">Именованные слоты</a></p>
 </li>
 </ul>
-<h3 id="slot-scope"><a href="#slot-scope" class="headerlink" title="slot-scope"></a>slot-scope</h3><ul>
+<h3 id="slot-scope"><a href="#slot-scope" class="headerlink" title="slot-scope"></a>slot-scope</h3><blockquote>
+<p>Добавлено в версии 2.5.0+</p>
+</blockquote>
+<ul>
 <li><p><strong>Принимает:</strong> <code>выражение аргумента функции</code></p>
 </li>
 <li><p><strong>Использование:</strong></p>
-<p>Используйте для обозначения элемента или компонента в качестве слота с ограниченной областью видимости. Значением атрибута должно быть валидное выражение JavaScript, которое может использоваться в качестве аргумента сигнатуры функции. Это означает, что в поддерживаемых окружениях вы также можете использовать деструктурирование ES2015 в выражении.</p>
+<p>Используется для обозначения элемента или компонента в качестве слота с ограниченной областью видимости. Значением атрибута должно быть валидное выражение JavaScript, которое может использоваться в качестве аргумента сигнатуры функции. Это означает, что в поддерживаемых окружениях вы также можете использовать деструктурирование ES2015 в выражении. Служит заменой для <a href="#scope-replaced"><code>scope</code></a> в версии 2.5.0+.</p>
 <p>Этот атрибут не поддерживает динамические привязки.</p>
 </li>
 <li><p><strong>См. также:</strong> <a href="../guide/components.html#Слоты-с-ограниченной-областью-видимости">Слоты с ограниченной областью видимости</a></p>
+</li>
+</ul>
+<h3 id="scope-заменено"><a href="#scope-заменено" class="headerlink" title="scope заменено"></a>scope <sup>заменено</sup></h3><p>Используется для обозначения элемента <code>&lt;template&gt;</code> в качестве слота с ограниченной областью видимости, который заменён на <a href="#slot-scope"><code>slot-scope</code></a> в версии 2.5.0+.</p>
+<ul>
+<li><p><strong>Использование:</strong></p>
+<p>Аналогично <a href="#slot-scope"><code>slot-scope</code></a> за исключением того, что <code>scope</code> может использоваться только на элементах <code>&lt;template&gt;</code>.</p>
 </li>
 </ul>
 <h3 id="is"><a href="#is" class="headerlink" title="is"></a>is</h3><ul>
