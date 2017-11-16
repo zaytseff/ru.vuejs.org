@@ -335,7 +335,8 @@
     }
 
     function makeHeaderClickable (link) {
-      var wrapper = link.querySelector('a')
+      var wrapper = document.createElement('a')
+      wrapper.href = '#' + link.id
       wrapper.setAttribute('data-scroll', '')
       link.parentNode.insertBefore(wrapper, link)
       wrapper.appendChild(link)
